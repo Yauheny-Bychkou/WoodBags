@@ -1,0 +1,44 @@
+[
+  {
+    "type": "header",
+    "links": [
+      { "nameTranslate": "Главная", "name": "main" },
+      { "nameTranslate": "О бренде", "name": "about" },
+      { "nameTranslate": "Галерея", "name": "galary" },
+      { "nameTranslate": "Уход", "name": "care" },
+      { "nameTranslate": "Заказать", "name": "order" },
+      { "nameTranslate": "Доставка и оплата", "name": "delivery" },
+      { "nameTranslate": "Контакты", "name": "contacts" },
+      { "nameTranslate": "Отызвы", "name": "reviews" },
+      { "nameTranslate": "", "name": "svg" }
+    ]
+  },
+  {
+    "type": "main",
+    "nameLinks": [
+      "Главная",
+      "О бренде",
+      "Галерея",
+      "Уход",
+      "Заказать",
+      "Доставка и оплата",
+      "Контакты",
+      "Отызвы",
+      "svg"
+    ]
+  },
+  {
+    "type": "shmain",
+    "nameLinks": [
+      "Главная",
+      "О бренде",
+      "Галерея",
+      "Уход",
+      "Заказать",
+      "Доставка и оплата",
+      "Контакты",
+      "Отызвы",
+      "svg"
+    ]
+  }
+]
