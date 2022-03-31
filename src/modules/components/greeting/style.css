@@ -1,6 +1,6 @@
 .greeting {
   position: relative;
-  color: #fff;
+  color: #000;
 }
 .greeting-wrapper {
   position: absolute;
@@ -18,17 +18,18 @@
 }
 .greeting-wrapper__title {
   margin: 0;
-  font-size: 100px;
-  line-height: 116px;
+  font-size: 150px;
+  line-height: 166px;
   font-family: 'Oranienbaum', sans-serif;
   font-weight: 400;
   margin-bottom: 34px;
+  text-transform: uppercase;
 }
 .greeting-wrapper__name {
   text-align: center;
   margin: 0;
-  font-size: 40px;
-  line-height: 53px;
+  font-size: 44px;
+  line-height: 60px;
   font-family: 'Playfair Display', sans-serif;
   font-weight: 400;
   margin-bottom: 127px;
@@ -36,8 +37,8 @@
 .greeting-wrapper__button {
   padding: 23px 96px 24px 94px;
   background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #000;
+  color: #000;
   font-size: 16px;
   line-height: 20px;
   font-family: 'Montserrat', sans-serif;

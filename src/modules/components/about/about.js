@@ -13,7 +13,7 @@ class About {
     <div class="container">
     <div class="about-wrapper">
       <div class="about-wrapper__img">
-        <img class="about-wrapper__image" src="about.png" alt="about" />
+        <img class="about-wrapper__image" src="about.jpg" alt="about" />
       </div>
       <div class="about-wrapper__text">
         <p class="about-wrapper__description">
