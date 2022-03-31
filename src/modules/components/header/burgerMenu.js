@@ -9,11 +9,6 @@ class BurgerMenu {
     this.link.setAttribute('href', '#');
     this.link.append(this.span);
     this.element.append(this.link);
-    // for (let i = 0; i < 3; i++) {
-    //   const span = document.createElement('span');
-    //   span.classList.add('header-burger__line');
-    //   this.element.append(span);
-    // }
   }
 }
 export default BurgerMenu;

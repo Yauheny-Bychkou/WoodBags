@@ -1,9 +1,6 @@
 import NavMenu from './navMenu';
 import './style.css';
 
-const typeStructure = 'header';
-const firstElement = 0;
-
 class Header {
   element = document.createElement('header');
   constructor() {

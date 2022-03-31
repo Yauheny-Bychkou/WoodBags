@@ -4,7 +4,6 @@ import BurgerMenu from './burgerMenu';
 import ApiService from '../api-service/api-service';
 
 const typeStructure = 'header';
-const firstElement = 0;
 
 class NavMenu {
   container = document.createElement('div');
@@ -19,13 +18,8 @@ class NavMenu {
     this.addClassList();
   }
   async getStructure() {
-    const requestStructure = await this.service.getStructure();
-    const headerStructure = requestStructure.filter((elem) => {
-      if (elem.type === typeStructure) {
-        return elem;
-      }
-    });
-    this.getList(headerStructure[firstElement]);
+    const structure = await this.service.getStructure(typeStructure);
+    this.getList(structure);
   }
   getList(structure) {
     structure.links.forEach((link) => {

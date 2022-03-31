@@ -9,8 +9,10 @@ class Greeting {
   getCode() {
     return `
     <img class="greeting-img" src="main.png" alt="main">
-    <div class="container">
-      <div class="greeting-wrapper">
+     <div class="greeting-wrapper">
+        <h1 class="greeting-wrapper__title">Woodbag.s</h1>
+        <h2 class="greeting-wrapper__name">Деревянные шедевры ручной&nbsp;работы!</h2>
+        <button class="greeting-wrapper__button">Галерея</button>
       </div>
     `;
   }
