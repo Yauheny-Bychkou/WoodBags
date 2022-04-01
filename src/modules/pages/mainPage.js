@@ -1,6 +1,7 @@
 import About from '../components/about/about';
 import Greeting from '../components/greeting/greeting';
 import Header from '../components/header/header';
+import Galery from '../components/galery/galery';
 
 class MainPage {
   constructor() {
@@ -8,7 +9,8 @@ class MainPage {
     this.header = new Header();
     this.greeting = new Greeting();
     this.about = new About();
-    document.body.append(this.header.element, this.greeting.element, this.about.element);
+    this.galery = new Galery();
+    document.body.append(this.header.element, this.greeting.element, this.about.element, this.galery.element);
     this.addEventListenerToBurgerButton();
   }
   addEventListenerToBurgerButton() {

@@ -14,17 +14,14 @@
     ]
   },
   {
-    "type": "main",
-    "nameLinks": [
-      "Главная",
-      "О бренде",
-      "Галерея",
-      "Уход",
-      "Заказать",
-      "Доставка и оплата",
-      "Контакты",
-      "Отызвы",
-      "svg"
+    "type": "galery",
+    "cards": [
+      { "nameTranslate": "Вышивка", "name": "embroidery", "img": "embroidery.jpg" },
+      { "nameTranslate": "Рамка", "name": "frame", "img": "frame.jpg" },
+      { "nameTranslate": "Минимализм", "name": "minimalism", "img": "minimalism.jpg" },
+      { "nameTranslate": "Конструктор", "name": "constructor", "img": "constructor.jpg" },
+      { "nameTranslate": "Авоськи", "name": "stringBag", "img": "stringBag.jpg" },
+      { "nameTranslate": "Броши", "name": "brooches", "img": "brooches.jpg" }
     ]
   },
   {
