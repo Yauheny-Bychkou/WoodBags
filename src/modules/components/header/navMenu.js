@@ -25,9 +25,10 @@ class NavMenu {
     structure.links.forEach((link) => {
       if (link.name !== 'svg') {
         this.headerWrapperList.append(new ListItem(link).element);
-      } else if (link.name === 'svg') {
-        this.headerWrapperNav.append(new Link(link).element);
       }
+      // else if (link.name === 'svg') {
+      //   this.headerWrapperNav.append();
+      // }
     });
   }
   addClassList() {
@@ -39,7 +40,7 @@ class NavMenu {
   appendWrappers() {
     this.headerWrapperNav.prepend(this.burgerMenu.element);
     this.headerWrapperNav.append(this.headerWrapperList);
-    this.headerWrapper.append(this.headerWrapperNav);
+    this.headerWrapper.append(this.headerWrapperNav, new Link('svg').element);
     this.container.append(this.headerWrapper);
   }
 }

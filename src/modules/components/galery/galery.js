@@ -7,11 +7,15 @@ const typeStructure = 'galery';
 class Galary {
   element = document.createElement('section');
   wrapperCards = document.createElement('div');
+  wrapperCardsTop = document.createElement('div');
+  wrapperCardsBottom = document.createElement('div');
   container = document.createElement('div');
   constructor() {
     this.service = new ApiService();
     this.element.classList.add('galery');
     this.wrapperCards.classList.add('galery-wrapper');
+    this.wrapperCardsTop.classList.add('galery-wrapper-top');
+    this.wrapperCardsBottom.classList.add('galery-wrapper-bottom');
     this.container.classList.add('container');
     this.container.append(this.wrapperCards);
     this.element.append(new Title('Каталог').element, this.container);
@@ -23,9 +27,12 @@ class Galary {
     this.getCards(structure);
   }
   getCards(structure) {
-    structure.cards.forEach((elem) => {
-      this.wrapperCards.append(new Card(elem.nameTranslate, elem.name, elem.img).element);
+    structure.cards.forEach((elem, i) => {
+      if (i < 3) {
+        this.wrapperCardsTop.append(new Card(elem.nameTranslate, elem.name, elem.img).element);
+      } else this.wrapperCardsBottom.append(new Card(elem.nameTranslate, elem.name, elem.img).element);
     });
+    this.wrapperCards.append(this.wrapperCardsTop, this.wrapperCardsBottom);
   }
   getCode() {
     return `
