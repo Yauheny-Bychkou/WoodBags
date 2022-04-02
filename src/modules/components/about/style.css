@@ -18,7 +18,7 @@
 
 .about-wrapper__image {
   width: 555px;
-  height: 720px;
+  height: 820px;
   object-fit: cover;
 }
 .about-wrapper__text {
@@ -52,7 +52,7 @@
 @media (max-width: 610px) {
   .about-wrapper__image {
     width: 335px;
-    height: 296px;
+    height: 500px;
   }
   .about-wrapper__img::after {
     top: 10px;
