@@ -2,32 +2,32 @@ import Title from '../title/title';
 import ApiService from '../api-service/api-service';
 import './style.css';
 import Cause from './cause';
-const typeStructure = 'why';
 
-class Why {
+class SectionText {
   element = document.createElement('section');
   container = document.createElement('div');
   whyWrapperText = document.createElement('div');
-  constructor() {
+  constructor(type) {
+    this.type = type;
     this.service = new ApiService();
-    this.element.classList.add('why');
+    this.element.classList.add('sectionText');
     this.container.classList.add('container');
-    this.whyWrapperText.classList.add('why-wrapper__text');
+    this.whyWrapperText.classList.add('sectionText-text');
     this.container.append(this.whyWrapperText);
-    this.title = new Title('Почему  именнно WOODBAG.S?');
-    this.titleElement = this.title.element;
-    this.title.title.classList.add('title-why');
-    this.element.append(this.titleElement, this.container);
     this.getStructure();
   }
   async getStructure() {
-    const structure = await this.service.getStructure(typeStructure);
+    const structure = await this.service.getStructure(this.type);
     this.getCauses(structure);
   }
   getCauses(structure) {
+    const title = new Title(structure.title);
+    const titleElement = title.element;
+    title.title.classList.add(`title-${structure.type}`);
+    this.element.append(titleElement, this.container);
     structure.causes.forEach((elem, i) => {
-      this.whyWrapperText.append(new Cause(elem.cause, i).element);
+      this.whyWrapperText.append(new Cause(elem.cause, i, structure.namePoint).element);
     });
   }
 }
-export default Why;
+export default SectionText;

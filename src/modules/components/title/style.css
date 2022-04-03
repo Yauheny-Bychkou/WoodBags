@@ -17,3 +17,14 @@
   margin: 0;
   margin-bottom: 50px;
 }
+@media (max-width: 1200px) {
+  .title-wrapper {
+    padding-top: 30px;
+  }
+  .title-line {
+    margin-bottom: 30px;
+  }
+  .title {
+    margin-bottom: 30px;
+  }
+}

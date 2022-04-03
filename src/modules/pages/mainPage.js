@@ -2,7 +2,7 @@ import About from '../components/about/about';
 import Greeting from '../components/greeting/greeting';
 import Header from '../components/header/header';
 import Galery from '../components/galery/galery';
-import Why from '../components/why/why';
+import SectionText from '../components/sectionText/sectionText';
 
 class MainPage {
   constructor() {
@@ -11,13 +11,15 @@ class MainPage {
     this.greeting = new Greeting();
     this.about = new About();
     this.galery = new Galery();
-    this.why = new Why();
+    this.why = new SectionText('why');
+    this.advice = new SectionText('advice');
     document.body.append(
       this.header.element,
       this.greeting.element,
       this.about.element,
       this.galery.element,
-      this.why.element
+      this.why.element,
+      this.advice.element
     );
     this.addEventListenerToBurgerButton();
   }

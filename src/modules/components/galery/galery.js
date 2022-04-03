@@ -20,7 +20,6 @@ class Galary {
     this.container.append(this.wrapperCards);
     this.element.append(new Title('Каталог').element, this.container);
     this.getStructure();
-    // this.element.insertAdjacentHTML('beforeend', this.getCode());
   }
   async getStructure() {
     const structure = await this.service.getStructure(typeStructure);

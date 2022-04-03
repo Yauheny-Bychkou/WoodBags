@@ -29,6 +29,12 @@ body {
     max-width: 751px;
   }
 }
+@media (max-width: 800px) {
+  .title-advice {
+    width: 306px;
+    text-align: center;
+  }
+}
 @media (max-width: 767px) {
   .container {
     max-width: 576px;
