@@ -3,6 +3,7 @@ import Greeting from '../components/greeting/greeting';
 import Header from '../components/header/header';
 import Galery from '../components/galery/galery';
 import SectionText from '../components/sectionText/sectionText';
+import Order from '../components/order/order';
 
 class MainPage {
   constructor() {
@@ -13,13 +14,15 @@ class MainPage {
     this.galery = new Galery();
     this.why = new SectionText('why');
     this.advice = new SectionText('advice');
+    this.order = new Order('order');
     document.body.append(
       this.header.element,
       this.greeting.element,
       this.about.element,
       this.galery.element,
       this.why.element,
-      this.advice.element
+      this.advice.element,
+      this.order.element
     );
     this.addEventListenerToBurgerButton();
   }

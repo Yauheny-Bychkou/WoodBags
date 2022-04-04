@@ -18,15 +18,15 @@ class SectionText {
   }
   async getStructure() {
     const structure = await this.service.getStructure(this.type);
-    this.getCauses(structure);
+    this.getPoints(structure);
   }
-  getCauses(structure) {
+  getPoints(structure) {
     const title = new Title(structure.title);
     const titleElement = title.element;
     title.title.classList.add(`title-${structure.type}`);
     this.element.append(titleElement, this.container);
-    structure.causes.forEach((elem, i) => {
-      this.whyWrapperText.append(new Cause(elem.cause, i, structure.namePoint).element);
+    structure.points.forEach((elem, i) => {
+      this.whyWrapperText.append(new Cause(elem.point, i, structure.namePoint).element);
     });
   }
 }
