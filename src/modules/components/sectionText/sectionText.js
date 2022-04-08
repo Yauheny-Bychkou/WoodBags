@@ -26,7 +26,9 @@ class SectionText {
     title.title.classList.add(`title-${structure.type}`);
     this.element.append(titleElement, this.container);
     structure.points.forEach((elem, i) => {
-      this.whyWrapperText.append(new Cause(elem.point, i, structure.namePoint).element);
+      if (this.type === 'why' && i === 4) {
+        this.whyWrapperText.append(new Cause(elem.point, i, structure.namePoint, true).element);
+      } else this.whyWrapperText.append(new Cause(elem.point, i, structure.namePoint, false).element);
     });
   }
 }

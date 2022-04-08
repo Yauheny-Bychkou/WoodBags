@@ -3,14 +3,13 @@ import Link from './link';
 import BurgerMenu from './burgerMenu';
 import ApiService from '../api-service/api-service';
 
-const typeStructure = 'header';
-
 class NavMenu {
   container = document.createElement('div');
   headerWrapper = document.createElement('div');
   headerWrapperNav = document.createElement('nav');
   headerWrapperList = document.createElement('ul');
-  constructor() {
+  constructor(type) {
+    this.typeStructure = type;
     this.service = new ApiService();
     this.burgerMenu = new BurgerMenu();
     this.appendWrappers();
@@ -18,7 +17,7 @@ class NavMenu {
     this.addClassList();
   }
   async getStructure() {
-    const structure = await this.service.getStructure(typeStructure);
+    const structure = await this.service.getStructure(this.typeStructure);
     this.getList(structure);
   }
   getList(structure) {
@@ -26,9 +25,6 @@ class NavMenu {
       if (link.name !== 'svg') {
         this.headerWrapperList.append(new ListItem(link).element);
       }
-      // else if (link.name === 'svg') {
-      //   this.headerWrapperNav.append();
-      // }
     });
   }
   addClassList() {

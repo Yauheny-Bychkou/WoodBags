@@ -3,9 +3,9 @@ import './style.css';
 
 class Header {
   element = document.createElement('header');
-  constructor() {
+  constructor(type) {
     this.element.classList.add('header');
-    this.navMenu = new NavMenu();
+    this.navMenu = new NavMenu(type);
     this.element.append(this.navMenu.container);
   }
 }

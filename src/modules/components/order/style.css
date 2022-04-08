@@ -48,8 +48,19 @@
     flex-direction: column;
     align-items: center;
   }
+  .stage-box {
+    margin-bottom: 25px;
+  }
+  .stage-box:last-child {
+    margin-bottom: 0;
+  }
 }
 @media (max-width: 650px) {
+  .order-button {
+    padding: 13px 38px 14px 35px;
+    font-size: 15px;
+    line-height: 18px;
+  }
   .stage-box {
     margin-bottom: 25px;
   }

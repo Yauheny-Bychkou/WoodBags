@@ -4,17 +4,19 @@ import Header from '../components/header/header';
 import Galery from '../components/galery/galery';
 import SectionText from '../components/sectionText/sectionText';
 import Order from '../components/order/order';
+import Comment from '../components/comments/comment';
 
 class MainPage {
   constructor() {
     document.body.innerHTML = '';
-    this.header = new Header();
-    this.greeting = new Greeting();
+    this.header = new Header('header');
+    this.greeting = new Greeting('greeting');
     this.about = new About();
     this.galery = new Galery();
     this.why = new SectionText('why');
     this.advice = new SectionText('advice');
     this.order = new Order('order');
+    this.comment = new Comment();
     document.body.append(
       this.header.element,
       this.greeting.element,
@@ -22,7 +24,8 @@ class MainPage {
       this.galery.element,
       this.why.element,
       this.advice.element,
-      this.order.element
+      this.order.element,
+      this.comment.element
     );
     this.addEventListenerToBurgerButton();
   }
