@@ -46,6 +46,7 @@
 .header-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .header-burger__line {
   width: 100%;
@@ -66,9 +67,7 @@
   display: flex;
   align-items: center;
 }
-.header-wrapper__link-svg {
-  margin-left: 130px;
-}
+
 .header-wrapper__link {
   text-decoration: none;
   color: #fff;
