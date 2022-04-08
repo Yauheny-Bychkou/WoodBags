@@ -49,7 +49,7 @@
     text-align: center;
   }
 }
-@media (max-width: 610px) {
+@media (max-width: 650px) {
   .about-wrapper__image {
     width: 335px;
     height: 500px;

@@ -104,7 +104,7 @@
     margin-bottom: 0;
   }
 }
-@media (max-width: 525px) {
+@media (max-width: 650px) {
   .galery-container {
     width: 335px;
     height: 304px;
