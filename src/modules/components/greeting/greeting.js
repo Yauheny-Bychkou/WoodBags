@@ -8,7 +8,7 @@ class Greeting {
   }
   getCode() {
     return `
-    <img class="greeting-img" src="main.jpg" alt="main">
+    <img class="greeting-img" src="mainn.jpg" alt="main">
      <div class="greeting-wrapper">
         <h1 class="greeting-wrapper__title">Woodbag.s</h1>
         <h2 class="greeting-wrapper__name">Деревянные шедевры ручной&nbsp;работы!</h2>
