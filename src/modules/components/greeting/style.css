@@ -22,7 +22,6 @@
   line-height: 166px;
   font-family: 'Oranienbaum', sans-serif;
   font-weight: 400;
-  margin-bottom: 34px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -76,7 +75,6 @@
     line-height: 75px;
     font-family: 'Oranienbaum', sans-serif;
     font-weight: 400;
-    margin-bottom: 15px;
   }
   .greeting-wrapper__name {
     font-size: 16px;
