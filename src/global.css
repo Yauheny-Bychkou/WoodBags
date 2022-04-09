@@ -12,9 +12,12 @@ body {
 }
 .container-arrows {
   position: relative;
-  max-width: 1260px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 50px;
+}
+.container-slider {
+  max-width: 1260px;
 }
 .hidden {
   visibility: hidden;
@@ -25,7 +28,11 @@ body {
 .rotate-minus {
   transform: rotate(-45deg);
 }
-
+@media (max-width: 1300px) {
+  .container-slider {
+    max-width: 1200px;
+  }
+}
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;

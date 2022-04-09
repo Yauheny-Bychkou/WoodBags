@@ -5,6 +5,7 @@ import Galery from '../components/galery/galery';
 import SectionText from '../components/sectionText/sectionText';
 import Order from '../components/order/order';
 import Comment from '../components/comments/comment';
+import Footer from '../components/footer/footer';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,7 +21,8 @@ class MainPage {
     this.why = new SectionText('why');
     this.advice = new SectionText('advice');
     this.order = new Order('order');
-    this.comment = new Comment();
+    this.comment = new Comment('comments');
+    this.footer = new Footer();
     document.body.append(
       this.header.element,
       this.greeting.element,
@@ -29,7 +31,8 @@ class MainPage {
       this.why.element,
       this.advice.element,
       this.order.element,
-      this.comment.element
+      this.comment.element,
+      this.footer.element
     );
     this.initSlider();
     this.addEventListenerToBurgerButton();
@@ -37,7 +40,6 @@ class MainPage {
   initSlider() {
     const swiper = new Swiper('.swiper', {
       modules: [Navigation, Pagination],
-      // Optional parameters
       direction: 'horizontal',
       loop: true,
       navigation: {

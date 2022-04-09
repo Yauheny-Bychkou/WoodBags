@@ -9,6 +9,9 @@
   border-top: 3px solid rgba(189, 154, 135, 1);
   margin-bottom: 40px;
 }
+.title-comment {
+  margin-bottom: 20px !important;
+}
 .title {
   font-size: 35px;
   line-height: 47px;
