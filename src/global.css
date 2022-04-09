@@ -72,3 +72,8 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 400px) {
+  .container-arrows {
+    max-width: 300px;
+  }
+}
