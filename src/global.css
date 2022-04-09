@@ -10,6 +10,12 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-arrows {
+  position: relative;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
 .hidden {
   visibility: hidden;
 }
@@ -19,14 +25,28 @@ body {
 .rotate-minus {
   transform: rotate(-45deg);
 }
+
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
+  }
+  .container-slider {
+    max-width: 730px;
+  }
+  .container-arrows {
+    max-width: 790px;
   }
 }
 @media (max-width: 992px) {
   .container {
     max-width: 751px;
+  }
+  .container-slider {
+    max-width: 335px !important;
+    padding: 0;
+  }
+  .container-arrows {
+    max-width: 395px;
   }
 }
 @media (max-width: 800px) {

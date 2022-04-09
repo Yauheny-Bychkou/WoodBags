@@ -32,6 +32,10 @@
   font-size: 18px;
   line-height: 26px;
 }
+.cause-link:hover {
+  color: red;
+  transition: 0.5s ease;
+}
 .sectionText-text {
   display: flex;
   flex-direction: column;

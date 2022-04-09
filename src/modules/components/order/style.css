@@ -42,6 +42,11 @@
   background-color: transparent;
   cursor: pointer;
 }
+.order-button:hover {
+  color: red;
+  border: 1px solid red;
+  transition: 0.5s ease;
+}
 @media (max-width: 1000px) {
   .stage-wrapper {
     width: max-content;
