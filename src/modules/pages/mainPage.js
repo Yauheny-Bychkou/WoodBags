@@ -7,6 +7,8 @@ import Order from '../components/order/order';
 import Comment from '../components/comments/comment';
 import Footer from '../components/footer/footer';
 import Menu from '../components/Menu/Menu';
+import Contact from '../components/contacts/contacts';
+import Delivery from '../components/delivery/delivery';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -25,6 +27,8 @@ class MainPage {
     this.order = new Order('order');
     this.comment = new Comment('comments');
     this.footer = new Footer();
+    this.contacts = new Contact();
+    this.delivery = new Delivery();
     document.body.append(
       this.header.element,
       this.greeting.element,
@@ -34,6 +38,8 @@ class MainPage {
       this.advice.element,
       this.order.element,
       this.comment.element,
+      this.contacts.element,
+      this.delivery.element,
       this.footer.element,
       this.menu.element
     );
