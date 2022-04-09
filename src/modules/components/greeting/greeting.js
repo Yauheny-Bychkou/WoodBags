@@ -25,7 +25,7 @@ class Greeting {
      <div class="greeting-wrapper">
         <h1 class="greeting-wrapper__title">${structure.title}</h1>
         <h2 class="greeting-wrapper__name">${structure.description}</h2>
-        <a href="#" class="greeting-wrapper__button">${structure.nameButton}</a>
+        <a href="#catalog" class="greeting-wrapper__button">${structure.nameButton}</a>
       </div>
     `;
   }

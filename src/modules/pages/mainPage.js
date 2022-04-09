@@ -44,10 +44,19 @@ class MainPage {
       this.menu.element
     );
     this.initSlider();
+    this.addEventListenerToCalalogButton();
     this.addEventListenerToBurgerButton();
     this.addEventListenerToAnchorHeader();
     this.addEventListenerToAnchorMenu();
   }
+  addEventListenerToCalalogButton() {
+    this.greeting.element.addEventListener('click', (e) => {
+      if (e.target.classList.contains('greeting-wrapper__button')) {
+        this.scrollToAnchor(e);
+      }
+    });
+  }
+
   addEventListenerToAnchorMenu() {
     this.menu.nav.addEventListener('click', (e) => {
       Promise.resolve()
@@ -56,12 +65,7 @@ class MainPage {
           this.menu.element.classList.remove('menu-visible');
           this.header.navMenu.burgerMenu.element.children[0].classList.remove('menu-btn__active');
           if (e.target.classList.contains('menu-wrapper__link')) {
-            e.preventDefault();
-            const blockID = e.target.getAttribute('href').substr(1);
-            document.getElementById(blockID).scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
+            this.scrollToAnchor(e);
           }
         });
     });
@@ -69,12 +73,7 @@ class MainPage {
   addEventListenerToAnchorHeader() {
     this.header.navMenu.headerWrapperNav.addEventListener('click', (e) => {
       if (e.target.classList.contains('header-wrapper__link')) {
-        e.preventDefault();
-        const blockID = e.target.getAttribute('href').substr(1);
-        document.getElementById(blockID).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
+        this.scrollToAnchor(e);
       }
     });
   }
@@ -120,6 +119,14 @@ class MainPage {
       if (e.target.classList.contains('menu-btn') || e.target.classList.contains('menu-span')) {
         this.header.navMenu.burgerMenu.element.children[0].classList.toggle('menu-btn__active');
       }
+    });
+  }
+  scrollToAnchor(e) {
+    e.preventDefault();
+    const blockID = e.target.getAttribute('href').substr(1);
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
     });
   }
 }
