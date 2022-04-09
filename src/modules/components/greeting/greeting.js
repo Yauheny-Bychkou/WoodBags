@@ -4,6 +4,7 @@ import ApiService from '../api-service/api-service';
 class Greeting {
   element = document.createElement('section');
   constructor(type) {
+    this.element.setAttribute('id', 'main');
     this.service = new ApiService();
     this.typeStructure = type;
     this.element.classList.add('greeting');

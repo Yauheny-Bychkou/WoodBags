@@ -4,6 +4,7 @@ import './style.css';
 class About {
   element = document.createElement('section');
   constructor() {
+    this.element.setAttribute('id', 'about');
     this.element.classList.add('about');
     this.element.append(new Title('О Бренде').element);
     this.element.insertAdjacentHTML('beforeend', this.getCode());

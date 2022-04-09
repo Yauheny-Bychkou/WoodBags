@@ -13,6 +13,7 @@ class Comment {
   arrowNext = document.createElement('img');
 
   constructor(type) {
+    this.element.setAttribute('id', 'reviews');
     this.service = new ApiService();
     this.type = type;
     this.title = new Title('Отзывы');

@@ -4,7 +4,7 @@
     "links": [
       { "nameTranslate": "Главная", "name": "main" },
       { "nameTranslate": "О бренде", "name": "about" },
-      { "nameTranslate": "Галерея", "name": "galary" },
+      { "nameTranslate": "Каталог", "name": "catalog" },
       { "nameTranslate": "Уход", "name": "care" },
       { "nameTranslate": "Заказать", "name": "order" },
       { "nameTranslate": "Доставка и оплата", "name": "delivery" },
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "type": "advice",
+    "type": "care",
     "title": "Как ухаживать за деревянными изделиями?",
     "namePoint": "Совет",
     "points": [

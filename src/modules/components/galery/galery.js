@@ -11,6 +11,7 @@ class Galary {
   wrapperCardsBottom = document.createElement('div');
   container = document.createElement('div');
   constructor() {
+    this.element.setAttribute('id', 'catalog');
     this.service = new ApiService();
     this.element.classList.add('galery');
     this.wrapperCards.classList.add('galery-wrapper');

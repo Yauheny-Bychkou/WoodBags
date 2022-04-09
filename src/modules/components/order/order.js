@@ -10,6 +10,7 @@ class Order {
   container = document.createElement('div');
   button = document.createElement('button');
   constructor(type) {
+    this.element.setAttribute('id', type);
     this.button.innerHTML = 'Контакты';
     this.button.classList.add('order-button');
     this.container.classList.add('container');

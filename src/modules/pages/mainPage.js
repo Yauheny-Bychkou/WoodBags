@@ -21,7 +21,7 @@ class MainPage {
     this.about = new About();
     this.galery = new Galery();
     this.why = new SectionText('why');
-    this.advice = new SectionText('advice');
+    this.advice = new SectionText('care');
     this.order = new Order('order');
     this.comment = new Comment('comments');
     this.footer = new Footer();
@@ -39,6 +39,34 @@ class MainPage {
     );
     this.initSlider();
     this.addEventListenerToBurgerButton();
+    this.addEventListenerToAnchorHeader();
+    this.addEventListenerToAnchorMenu();
+  }
+  addEventListenerToAnchorMenu() {
+    this.menu.nav.addEventListener('click', (e) => {
+      this.menu.element.classList.remove('menu-visible');
+      this.header.navMenu.burgerMenu.element.children[0].classList.remove('menu-btn__active');
+      if (e.target.classList.contains('menu-wrapper__link')) {
+        e.preventDefault();
+        const blockID = e.target.getAttribute('href').substr(1);
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    });
+  }
+  addEventListenerToAnchorHeader() {
+    this.header.navMenu.headerWrapperNav.addEventListener('click', (e) => {
+      if (e.target.classList.contains('header-wrapper__link')) {
+        e.preventDefault();
+        const blockID = e.target.getAttribute('href').substr(1);
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    });
   }
   initSlider() {
     const swiper = new Swiper('.swiper', {
