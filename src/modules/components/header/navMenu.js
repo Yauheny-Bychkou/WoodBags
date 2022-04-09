@@ -23,7 +23,7 @@ class NavMenu {
   getList(structure) {
     structure.links.forEach((link) => {
       if (link.name !== 'svg') {
-        this.headerWrapperList.append(new ListItem(link).element);
+        this.headerWrapperList.append(new ListItem(link, 'header').element);
       }
     });
   }

@@ -6,6 +6,7 @@ import SectionText from '../components/sectionText/sectionText';
 import Order from '../components/order/order';
 import Comment from '../components/comments/comment';
 import Footer from '../components/footer/footer';
+import Menu from '../components/Menu/Menu';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,6 +15,7 @@ import 'swiper/css/pagination';
 class MainPage {
   constructor() {
     document.body.innerHTML = '';
+    this.menu = new Menu();
     this.header = new Header('header');
     this.greeting = new Greeting('greeting');
     this.about = new About();
@@ -32,7 +34,8 @@ class MainPage {
       this.advice.element,
       this.order.element,
       this.comment.element,
-      this.footer.element
+      this.footer.element,
+      this.menu.element
     );
     this.initSlider();
     this.addEventListenerToBurgerButton();
@@ -73,6 +76,8 @@ class MainPage {
   }
   addEventListenerToBurgerButton() {
     this.header.navMenu.burgerMenu.element.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.menu.element.classList.toggle('menu-visible');
       if (e.target.classList.contains('menu-btn') || e.target.classList.contains('menu-span')) {
         this.header.navMenu.burgerMenu.element.children[0].classList.toggle('menu-btn__active');
       }
