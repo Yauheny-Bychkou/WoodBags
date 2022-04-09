@@ -23,6 +23,7 @@
 @media (max-width: 1200px) {
   .title-wrapper {
     padding-top: 30px;
+    text-align: center;
   }
   .title-line {
     margin-bottom: 30px;

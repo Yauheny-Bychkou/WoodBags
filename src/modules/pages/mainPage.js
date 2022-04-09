@@ -44,16 +44,20 @@ class MainPage {
   }
   addEventListenerToAnchorMenu() {
     this.menu.nav.addEventListener('click', (e) => {
-      this.menu.element.classList.remove('menu-visible');
-      this.header.navMenu.burgerMenu.element.children[0].classList.remove('menu-btn__active');
-      if (e.target.classList.contains('menu-wrapper__link')) {
-        e.preventDefault();
-        const blockID = e.target.getAttribute('href').substr(1);
-        document.getElementById(blockID).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
+      Promise.resolve()
+        .then(() => document.body.classList.remove('overflow-hidden'))
+        .then(() => {
+          this.menu.element.classList.remove('menu-visible');
+          this.header.navMenu.burgerMenu.element.children[0].classList.remove('menu-btn__active');
+          if (e.target.classList.contains('menu-wrapper__link')) {
+            e.preventDefault();
+            const blockID = e.target.getAttribute('href').substr(1);
+            document.getElementById(blockID).scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
         });
-      }
     });
   }
   addEventListenerToAnchorHeader() {
@@ -105,6 +109,7 @@ class MainPage {
   addEventListenerToBurgerButton() {
     this.header.navMenu.burgerMenu.element.addEventListener('click', (e) => {
       e.preventDefault();
+      document.body.classList.add('overflow-hidden');
       this.menu.element.classList.toggle('menu-visible');
       if (e.target.classList.contains('menu-btn') || e.target.classList.contains('menu-span')) {
         this.header.navMenu.burgerMenu.element.children[0].classList.toggle('menu-btn__active');

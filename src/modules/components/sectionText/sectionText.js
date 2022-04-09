@@ -21,7 +21,6 @@ class SectionText {
     this.getPoints(structure);
   }
   getPoints(structure) {
-    console.log(structure);
     this.element.setAttribute('id', structure.type);
     const title = new Title(structure.title);
     const titleElement = title.element;
