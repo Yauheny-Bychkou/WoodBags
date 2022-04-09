@@ -5,6 +5,7 @@ class Greeting {
   element = document.createElement('section');
   img = document.createElement('img');
   constructor(type) {
+    this.img.classList.add('greeting-img');
     this.element.setAttribute('id', 'main');
     this.service = new ApiService();
     this.typeStructure = type;
@@ -21,7 +22,6 @@ class Greeting {
   }
   getCode(structure) {
     return `
-    
      <div class="greeting-wrapper">
         <h1 class="greeting-wrapper__title">${structure.title}</h1>
         <h2 class="greeting-wrapper__name">${structure.description}</h2>
