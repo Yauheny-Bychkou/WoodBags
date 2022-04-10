@@ -9,6 +9,7 @@ import Footer from '../components/footer/footer';
 import Menu from '../components/Menu/Menu';
 import Contact from '../components/contacts/contacts';
 import Delivery from '../components/delivery/delivery';
+import Collage from '../components/collage/collage';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -29,17 +30,19 @@ class MainPage {
     this.footer = new Footer();
     this.contacts = new Contact();
     this.delivery = new Delivery();
+    this.collage = new Collage();
     document.body.append(
       this.header.element,
       this.greeting.element,
       this.about.element,
       this.galery.element,
       this.why.element,
+      this.collage.element,
       this.advice.element,
       this.order.element,
       this.comment.element,
-      this.contacts.element,
       this.delivery.element,
+      this.contacts.element,
       this.footer.element,
       this.menu.element
     );

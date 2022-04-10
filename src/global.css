@@ -13,6 +13,10 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-collage {
+  max-width: 750px;
+  margin: 0 auto;
+}
 .container-arrows {
   position: relative;
   max-width: 1400px;
@@ -60,6 +64,9 @@ body {
   }
 }
 @media (max-width: 800px) {
+  .container-collage {
+    max-width: 370px;
+  }
   .title-advice {
     width: 306px;
     text-align: center;
@@ -85,5 +92,10 @@ body {
 @media (max-width: 400px) {
   .container-arrows {
     max-width: 300px;
+  }
+}
+@media (max-width: 380px) {
+  .container-collage {
+    max-width: 330px;
   }
 }
