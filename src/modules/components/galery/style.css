@@ -28,8 +28,8 @@
 }
 .galery-container {
   position: relative;
-  width: 330px;
-  height: 297px;
+  width: 360px;
+  height: 327px;
 }
 .galery-container::after {
   position: absolute;
@@ -114,8 +114,8 @@
   }
 }
 @media (max-width: 650px) {
-  .galery-container {
-    width: 270px;
-    height: 237px;
+  .galery-title {
+    font-size: 20px;
+    line-height: 27px;
   }
 }

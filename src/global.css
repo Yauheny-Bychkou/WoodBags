@@ -16,6 +16,10 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-galery {
+  max-width: 1050px;
+  margin: 0 auto;
+}
 .container-collage {
   max-width: 750px;
   margin: 0 auto;
