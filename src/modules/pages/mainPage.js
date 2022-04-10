@@ -35,9 +35,9 @@ class MainPage {
       this.header.element,
       this.greeting.element,
       this.about.element,
-      // this.galery.element,
+      this.galery.element,
       this.why.element,
-      // this.collage.element,
+      this.collage.element,
       this.advice.element,
       this.order.element,
       this.comment.element,
@@ -61,7 +61,7 @@ class MainPage {
         this.contacts.element.classList.remove('none');
         this.footer.element.classList.remove('none');
         this.menu.element.classList.remove('none');
-      }, 10);
+      }, 0);
     };
     this.initSlider();
     this.addEventListenerToCalalogButton();
