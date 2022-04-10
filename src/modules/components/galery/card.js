@@ -17,7 +17,10 @@ class Card {
     this.wrapperAbsolute.append(this.title);
     this.wrapperAbsolute.classList.add('galery-absolute');
     this.overlay.classList.add('galery-overlay');
-    this.wrapperImg.append(this.img, this.wrapperAbsolute, this.overlay);
+    this.img.onload = () => {
+      this.wrapperImg.prepend(this.img);
+    };
+    this.wrapperImg.append(this.wrapperAbsolute, this.overlay);
     this.element.append(this.wrapperImg);
   }
 }

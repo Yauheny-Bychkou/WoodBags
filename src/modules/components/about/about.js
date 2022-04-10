@@ -39,7 +39,6 @@ class About {
             одну, а потом их оказалось больше 200 и они учувствуют в показах, выставках и ярмарках.`;
   }
   appendWrapper() {
-    this.aboutWrapperImg.append(this.aboutWrapperImage);
     this.aboutWrapperText.append(
       this.aboutWrapperDescriptionTop,
       this.aboutWrapperDescriptionBold,
@@ -48,8 +47,9 @@ class About {
     this.aboutWrapper.append(this.aboutWrapperImg, this.aboutWrapperText);
     this.container.append(this.aboutWrapper);
     this.aboutWrapperImage.onload = () => {
-      this.element.append(new Title('О Бренде').element, this.container);
+      this.aboutWrapperImg.append(this.aboutWrapperImage);
     };
+    this.element.append(new Title('О Бренде').element, this.container);
   }
 }
 export default About;
