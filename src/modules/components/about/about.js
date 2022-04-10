@@ -29,6 +29,7 @@ class About {
     this.aboutWrapperDescriptionBottom.classList.add('about-wrapper__description');
   }
   addContent() {
+    this.aboutWrapperImage.setAttribute('loading', 'lazy');
     this.aboutWrapperImage.setAttribute('src', 'about.jpg');
     this.aboutWrapperImage.setAttribute('alt', 'about');
     this.aboutWrapperDescriptionTop.innerHTML =
