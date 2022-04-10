@@ -96,8 +96,8 @@
 }
 @media (max-width: 1200px) {
   .galery-container {
-    width: 330px;
-    height: 297px;
+    width: 270px;
+    height: 237px;
   }
   .galery-wrapper-top {
     flex-direction: column;
@@ -115,7 +115,7 @@
 }
 @media (max-width: 650px) {
   .galery-container {
-    width: 330px;
-    height: 297px;
+    width: 270px;
+    height: 237px;
   }
 }
