@@ -99,8 +99,12 @@
     width: 270px;
     height: 237px;
   }
+  .galery-wrapper {
+    display: flex;
+  }
   .galery-wrapper-top {
     flex-direction: column;
+    margin-right: 30px;
   }
   .galery-wrapper-bottom {
     flex-direction: column;
@@ -117,5 +121,18 @@
   .galery-title {
     font-size: 20px;
     line-height: 27px;
+  }
+  .galery-wrapper-top {
+    margin-right: 0px;
+  }
+  .galery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .galery-box:hover .galery-title {
+    font-size: 30px;
+    line-height: 33px;
+    transition: 0.5s ease;
   }
 }

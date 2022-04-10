@@ -17,7 +17,7 @@ class Galary {
     this.wrapperCards.classList.add('galery-wrapper');
     this.wrapperCardsTop.classList.add('galery-wrapper-top');
     this.wrapperCardsBottom.classList.add('galery-wrapper-bottom');
-    this.container.classList.add('container');
+    this.container.classList.add('container-galery');
     this.getStructure();
   }
   async getStructure() {
