@@ -13,7 +13,7 @@ class Cause {
     } else {
       const arrTextCause = cause.split(' ');
       const [first, second, ...arr] = arrTextCause;
-      this.link.setAttribute('href', '#');
+      this.link.setAttribute('href', '#catalog');
       this.link.innerHTML = second;
       this.link.classList.add('cause-link');
       this.causeText.append(first, this.link, arr.join(' '));
