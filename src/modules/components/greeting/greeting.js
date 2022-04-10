@@ -15,9 +15,9 @@ class Greeting {
   async getStructure() {
     const structure = await this.service.getStructure(this.typeStructure);
     this.img.setAttribute('src', structure.img);
-    this.element.insertAdjacentHTML('afterbegin', this.getCode(structure));
     this.img.onload = () => {
       this.element.prepend(this.img);
+      this.element.insertAdjacentHTML('afterbegin', this.getCode(structure));
     };
   }
   getCode(structure) {
