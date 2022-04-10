@@ -37,7 +37,7 @@ class MainPage {
       this.about.element,
       this.galery.element,
       this.why.element,
-      this.collage.element,
+      // this.collage.element,
       this.advice.element,
       this.order.element,
       this.comment.element,
