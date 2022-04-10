@@ -35,9 +35,9 @@ class MainPage {
       this.header.element,
       this.greeting.element,
       this.about.element,
-      this.galery.element,
+      // this.galery.element,
       this.why.element,
-      this.collage.element,
+      // this.collage.element,
       this.advice.element,
       this.order.element,
       this.comment.element,
@@ -46,24 +46,23 @@ class MainPage {
       this.footer.element,
       this.menu.element
     );
-    // window.onload = () => {
-    //   setTimeout(() => {
-    //     this.header.element.classList.remove('none');
-    //     this.greeting.element.classList.remove('none');
-    //     this.about.element.classList.remove('none');
-    //     this.galery.element.classList.remove('none');
-    //     this.why.element.classList.remove('none');
-    //     this.collage.element.classList.remove('none');
-    //     this.advice.element.classList.remove('none');
-    //     this.order.element.classList.remove('none');
-    //     this.comment.element.classList.remove('none');
-    //     this.delivery.element.classList.remove('none');
-    //     this.contacts.element.classList.remove('none');
-    //     this.footer.element.classList.remove('none');
-    //     this.menu.element.classList.remove('none');
-    //   }, 100);
-    //
-    // };
+    window.onload = () => {
+      setTimeout(() => {
+        this.header.element.classList.remove('none');
+        this.greeting.element.classList.remove('none');
+        this.about.element.classList.remove('none');
+        this.galery.element.classList.remove('none');
+        this.why.element.classList.remove('none');
+        this.collage.element.classList.remove('none');
+        this.advice.element.classList.remove('none');
+        this.order.element.classList.remove('none');
+        this.comment.element.classList.remove('none');
+        this.delivery.element.classList.remove('none');
+        this.contacts.element.classList.remove('none');
+        this.footer.element.classList.remove('none');
+        this.menu.element.classList.remove('none');
+      }, 10);
+    };
     this.initSlider();
     this.addEventListenerToCalalogButton();
     this.addEventListenerToBurgerButton();
