@@ -10,6 +10,7 @@ import Menu from '../components/Menu/Menu';
 import Contact from '../components/contacts/contacts';
 import Delivery from '../components/delivery/delivery';
 import Collage from '../components/collage/collage';
+import Why from '../components/why/why';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -23,7 +24,7 @@ class MainPage {
     this.greeting = new Greeting('greeting');
     this.about = new About();
     this.galery = new Galery();
-    this.why = new SectionText('why');
+    this.why = new Why();
     this.advice = new SectionText('care');
     this.order = new Order('order');
     this.comment = new Comment('comments');
@@ -68,6 +69,10 @@ class MainPage {
     this.addEventListenerToBurgerButton();
     this.addEventListenerToAnchorHeader();
     this.addEventListenerToAnchorMenu();
+    this.addEventListenerToLinkForm();
+  }
+  addEventListenerToLinkForm() {
+    this.why.link.addEventListener('click', (e) => this.scrollToAnchor(e));
   }
   addEventListenerToCalalogButton() {
     this.greeting.element.addEventListener('click', (e) => {

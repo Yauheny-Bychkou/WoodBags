@@ -2,33 +2,47 @@ import Title from '../title/title';
 import ApiService from '../api-service/api-service';
 import './style.css';
 
-class SectionText {
+const structure = {
+  type: 'why',
+  title: 'Почему  именнно WOODBAG.S?',
+  namePoint: 'Причина',
+  points: [
+    { point: '100% эксклюзив.' },
+    { point: 'Только качественные и проверенные материалы.' },
+    { point: 'Уникальная техника вышивки прямо по дереву (вышивка не приклеивается).' },
+    { point: 'Возможность самому придумать сумочку мечты или вместе со мной что-то подобрать для себя ' },
+    {
+      point: 'Актуальные формы деревянных минималистичных сумок',
+    },
+    {
+      point:
+        'У меня нет отложенного производства и конвейера для создания десятка однотипных сумок. Каждая новая сумочка - результат кропотливого ручного труда, за который я переживаю не меньше Вас и всегда готова придти на помощь.',
+    },
+  ],
+};
+
+class Why {
   element = document.createElement('section');
   container = document.createElement('div');
   whyWrapperText = document.createElement('div');
   link = document.createElement('a');
 
-  constructor(type) {
-    this.type = type;
+  constructor() {
     this.service = new ApiService();
     this.element.classList.add('sectionText', 'none');
     this.container.classList.add('container');
     this.whyWrapperText.classList.add('sectionText-text');
     this.container.append(this.whyWrapperText);
-    this.getStructure();
+    this.getPoints();
   }
-  async getStructure() {
-    const structure = await this.service.getStructure(this.type);
-    this.getPoints(structure);
-  }
-  getPoints(structure) {
+  getPoints() {
     this.element.setAttribute('id', structure.type);
     const title = new Title(structure.title);
     const titleElement = title.element;
     title.title.classList.add(`title-${structure.type}`);
     this.element.append(titleElement, this.container);
     structure.points.forEach((elem, i) => {
-      if (this.type === 'why' && i === 4) {
+      if (i === 4) {
         this.whyWrapperText.append(this.getCause(elem.point, i, structure.namePoint, true));
       } else this.whyWrapperText.append(this.getCause(elem.point, i, structure.namePoint, false));
     });
@@ -55,4 +69,4 @@ class SectionText {
     return element;
   }
 }
-export default SectionText;
+export default Why;
