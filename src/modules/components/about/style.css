@@ -17,8 +17,8 @@
 }
 
 .about-wrapper__image {
-  width: 355px;
-  height: 620px;
+  width: 555px;
+  height: 820px;
   object-fit: cover;
 }
 .about-wrapper__text {
@@ -45,6 +45,11 @@
   font-weight: 500;
 }
 @media (max-width: 1200px) {
+  .about-wrapper__image {
+    width: 355px;
+    height: 620px;
+    object-fit: cover;
+  }
   .about-wrapper {
     flex-direction: column;
     align-items: center;
