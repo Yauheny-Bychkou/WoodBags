@@ -12,24 +12,24 @@ class Collage {
       <div class="collage-wrapper">
         <div class="collage-left">
           <div class="collage-left__top">
-            <img class="collage-left__top-img" src="left-1.jpg" alt="picture" />
+            <img class="collage-left__top-img" src="left-1.jpg" alt="picture" loading="lazy"  />
           </div>
           <div class="collage-left__middle">
-            <img class="collage-left__middle-img" src="left-2.jpg" alt="picture" />
+            <img class="collage-left__middle-img" src="left-2.jpg" alt="picture" loading="lazy"  />
           </div>
           <div class="collage-left__bottom">
-            <img class="collage-left__bottom-img" src="left-3.jpg" alt="picture" />
+            <img class="collage-left__bottom-img" src="left-3.jpg" alt="picture" loading="lazy"  />
           </div>
         </div>
         <div class="collage-right">
           <div class="collage-right__top">
-            <img class="collage-right__top-img" src="right-1.jpg" alt="picture" />
+            <img class="collage-right__top-img" src="right-1.jpg" alt="picture" loading="lazy"  />
           </div>
           <div class="collage-right__middle">
-            <img class="collage-right__middle-img" src="right-2.jpg" alt="picture" />
+            <img class="collage-right__middle-img" src="right-2.jpg" alt="picture" loading="lazy"  />
           </div>
           <div class="collage-right__bottom">
-            <img class="collage-right__bottom-img" src="right-3.jpg" alt="picture" />
+            <img class="collage-right__bottom-img" src="right-3.jpg" alt="picture" loading="lazy"  />
           </div>
         </div>
       </div>

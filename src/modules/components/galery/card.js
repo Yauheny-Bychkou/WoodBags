@@ -12,6 +12,7 @@ class Card {
     this.img.classList.add('galery-img');
     this.img.setAttribute('src', img);
     this.img.setAttribute('alt', 'image');
+    this.img.setAttribute('loading', 'lazy');
     this.title.innerHTML = text;
     this.wrapperAbsolute.append(this.title);
     this.wrapperAbsolute.classList.add('galery-absolute');

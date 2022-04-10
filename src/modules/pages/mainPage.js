@@ -61,7 +61,7 @@ class MainPage {
         this.contacts.element.classList.remove('none');
         this.footer.element.classList.remove('none');
         this.menu.element.classList.remove('none');
-      }, 200);
+      }, 100);
     };
     this.initSlider();
     this.addEventListenerToCalalogButton();
