@@ -18,7 +18,7 @@ class Order {
     this.type = type;
     this.stageWrapper.classList.add('stage-wrapper');
     this.orderWrapper.classList.add('order-wrapper');
-    this.element.classList.add('order');
+    this.element.classList.add('order', 'none');
     this.orderWrapper.append(this.stageWrapper, this.button);
     this.container.append(this.orderWrapper);
     this.getStructure();

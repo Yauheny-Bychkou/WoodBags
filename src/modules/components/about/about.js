@@ -15,11 +15,10 @@ class About {
     this.addClassName();
     this.addContent();
     this.appendWrapper();
-    // this.element.insertAdjacentHTML('beforeend', this.getCode());
   }
   addClassName() {
     this.element.setAttribute('id', 'about');
-    this.element.classList.add('about');
+    this.element.classList.add('about', 'none');
     this.container.classList.add('container');
     this.aboutWrapper.classList.add('about-wrapper');
     this.aboutWrapperImg.classList.add('about-wrapper__img');
@@ -51,29 +50,6 @@ class About {
     this.aboutWrapperImage.onload = () => {
       this.element.append(new Title('О Бренде').element, this.container);
     };
-  }
-  getCode() {
-    return `
-    <div class="container">
-      <div class="about-wrapper">
-        <div class="about-wrapper__img">
-          <img class="about-wrapper__image" src="about.jpg" alt="about" />
-        </div>
-        <div class="about-wrapper__text">
-          <p class="about-wrapper__description">
-            Меня зовут Аня, мне 25 и я технарь, поэтому дрелью и отверткой владею профессионально. Закончила БНТУ,
-            
-          </p>
-          <p class="about-wrapper__description-bold">&laquo;...поняла, что диплом это хорошо, а бизнес лучше.&raquo</p>
-          <p class="about-wrapper__description">
-            Поиски «своего дела» были долгими и мучительными, пробовала себя в разных сферах. Потом я влюбилась в идею
-            деревянной сумки и создала своего первого «Розового Фламинго», потом подруге сделала сумочку, потом еще
-            одну, а потом их оказалось больше 200 и они учувствуют в показах, выставках и ярмарках.
-          </p>
-        </div>
-      </div>
-    </div>
-    `;
   }
 }
 export default About;

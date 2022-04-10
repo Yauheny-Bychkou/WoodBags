@@ -9,7 +9,7 @@ class Greeting {
     this.element.setAttribute('id', 'main');
     this.service = new ApiService();
     this.typeStructure = type;
-    this.element.classList.add('greeting');
+    this.element.classList.add('greeting', 'none');
     this.getStructure();
   }
   async getStructure() {

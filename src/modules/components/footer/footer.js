@@ -3,7 +3,7 @@ import './style.css';
 class Footer {
   element = document.createElement('footer');
   constructor() {
-    this.element.classList.add('footer');
+    this.element.classList.add('footer', 'none');
     this.element.insertAdjacentHTML('beforeend', this.getCode());
   }
   getCode() {

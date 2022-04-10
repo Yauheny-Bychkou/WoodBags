@@ -10,7 +10,7 @@ class SectionText {
   constructor(type) {
     this.type = type;
     this.service = new ApiService();
-    this.element.classList.add('sectionText');
+    this.element.classList.add('sectionText', 'none');
     this.container.classList.add('container');
     this.whyWrapperText.classList.add('sectionText-text');
     this.container.append(this.whyWrapperText);

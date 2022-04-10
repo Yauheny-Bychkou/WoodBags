@@ -31,44 +31,38 @@ class MainPage {
     this.contacts = new Contact();
     this.delivery = new Delivery();
     this.collage = new Collage();
-    Promise.resolve()
-      .then(() => document.body.append(this.header.element))
-      .then(() => document.body.append(this.greeting.element))
-      .then(() => document.body.append(this.about.element))
-      .then(() => document.body.append(this.galery.element))
-      .then(() => document.body.append(this.why.element))
-      .then(() => document.body.append(this.collage.element))
-      .then(() => document.body.append(this.advice.element))
-      .then(() => document.body.append(this.order.element))
-      .then(() => document.body.append(this.comment.element))
-      .then(() => document.body.append(this.delivery.element))
-      .then(() => document.body.append(this.contacts.element))
-      .then(() => document.body.append(this.footer.element))
-      .then(() => document.body.append(this.menu.element));
-    // .then(() => )
-    // .then(() => )
-    // .then(() => )
-    // .then(() =>
-    // .then(() => )
-    // .then(() => )
-    // .then(() => )
-    // .then(() => );
-
-    // document.body.append(
-    //   this.header.element,
-    //   this.greeting.element,
-    //   this.about.element,
-    //   this.galery.element,
-    //   this.why.element,
-    //   this.collage.element,
-    //   this.advice.element,
-    //   this.order.element,
-    //   this.comment.element,
-    //   this.delivery.element,
-    //   this.contacts.element,
-    //   this.footer.element,
-    //   this.menu.element
-    // );
+    document.body.append(
+      this.header.element,
+      this.greeting.element,
+      this.about.element,
+      this.galery.element,
+      this.why.element,
+      this.collage.element,
+      this.advice.element,
+      this.order.element,
+      this.comment.element,
+      this.delivery.element,
+      this.contacts.element,
+      this.footer.element,
+      this.menu.element
+    );
+    window.onload = () => {
+      setTimeout(() => {
+        this.header.element.classList.remove('none');
+        this.greeting.element.classList.remove('none');
+        this.about.element.classList.remove('none');
+        this.galery.element.classList.remove('none');
+        this.why.element.classList.remove('none');
+        this.collage.element.classList.remove('none');
+        this.advice.element.classList.remove('none');
+        this.order.element.classList.remove('none');
+        this.comment.element.classList.remove('none');
+        this.delivery.element.classList.remove('none');
+        this.contacts.element.classList.remove('none');
+        this.footer.element.classList.remove('none');
+        this.menu.element.classList.remove('none');
+      }, 100);
+    };
     this.initSlider();
     this.addEventListenerToCalalogButton();
     this.addEventListenerToBurgerButton();

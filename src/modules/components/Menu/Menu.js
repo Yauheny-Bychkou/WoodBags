@@ -14,7 +14,7 @@ class Menu {
     this.name.innerHTML = 'Woodbag.s';
     this.lineTop.classList.add('menu-line');
     this.lineBottom.classList.add('menu-line');
-    this.element.classList.add('menu');
+    this.element.classList.add('menu', 'none');
     this.nav.classList.add('menu-nav');
     this.list.classList.add('menu-list');
     this.service = new ApiService();

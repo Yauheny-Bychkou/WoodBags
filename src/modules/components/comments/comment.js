@@ -24,7 +24,7 @@ class Comment {
     this.swiperButtonNext.append(this.arrowNext);
     this.swiperButtonPrev.classList.add('slider-button-prev', 'slider-button');
     this.swiperButtonNext.classList.add('slider-button-next', 'slider-button');
-    this.element.classList.add('comments');
+    this.element.classList.add('comments', 'none');
     this.container.classList.add('container', 'container-slider');
     this.containerArrows.classList.add('container-arrows');
     this.container.append(new Slider().swiper);

@@ -3,7 +3,7 @@ import './style.css';
 class Collage {
   element = document.createElement('section');
   constructor() {
-    this.element.classList.add('collage');
+    this.element.classList.add('collage', 'none');
     this.element.insertAdjacentHTML('beforeend', this.getCode());
   }
   getCode() {

@@ -13,7 +13,7 @@ class Galary {
   constructor() {
     this.element.setAttribute('id', 'catalog');
     this.service = new ApiService();
-    this.element.classList.add('galery');
+    this.element.classList.add('galery', 'none');
     this.wrapperCards.classList.add('galery-wrapper');
     this.wrapperCardsTop.classList.add('galery-wrapper-top');
     this.wrapperCardsBottom.classList.add('galery-wrapper-bottom');
