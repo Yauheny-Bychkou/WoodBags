@@ -29,7 +29,6 @@ class About {
     this.aboutWrapperDescriptionBottom.classList.add('about-wrapper__description');
   }
   addContent() {
-    this.aboutWrapperImage.setAttribute('loading', 'lazy');
     this.aboutWrapperImage.setAttribute('src', 'about.jpg');
     this.aboutWrapperImage.setAttribute('alt', 'about');
     this.aboutWrapperDescriptionTop.innerHTML =
@@ -49,6 +48,7 @@ class About {
     this.container.append(this.aboutWrapper);
     this.aboutWrapperImage.onload = () => {
       this.aboutWrapperImg.append(this.aboutWrapperImage);
+      this.aboutWrapperImage.setAttribute('loading', 'lazy');
     };
     this.element.append(new Title('О Бренде').element, this.container);
   }
