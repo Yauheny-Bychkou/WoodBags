@@ -57,6 +57,9 @@ class Collage {
     this.collageLeftTopImg.setAttribute('alt', 'image');
     this.collageLeftMiddleImg.setAttribute('alt', 'image');
     this.collageLeftBottomImg.setAttribute('alt', 'image');
+    this.collageLeftTopImg.setAttribute('loading', 'lazy');
+    this.collageLeftMiddleImg.setAttribute('loading', 'lazy');
+    this.collageLeftBottomImg.setAttribute('loading', 'lazy');
 
     this.collageRightTopImg.setAttribute('src', 'right-1.jpg');
     this.collageRightMiddleImg.setAttribute('src', 'right-2.jpg');
@@ -64,6 +67,9 @@ class Collage {
     this.collageRightTopImg.setAttribute('alt', 'image');
     this.collageRightMiddleImg.setAttribute('alt', 'image');
     this.collageRightBottomImg.setAttribute('alt', 'image');
+    this.collageRightTopImg.setAttribute('loading', 'lazy');
+    this.collageRightMiddleImg.setAttribute('loading', 'lazy');
+    this.collageRightBottomImg.setAttribute('loading', 'lazy');
   }
   appendWrapper() {
     this.collageLeftTopImg.onload = () => this.collageLeftTop.append(this.collageLeftTopImg);
