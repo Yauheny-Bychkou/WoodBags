@@ -1,6 +1,5 @@
 import Title from '../title/title';
 import Slider from './slider';
-import ApiService from '../api-service/api-service';
 import './style.css';
 
 class Comment {
@@ -14,7 +13,6 @@ class Comment {
 
   constructor(type) {
     this.element.setAttribute('id', 'reviews');
-    this.service = new ApiService();
     this.type = type;
     this.title = new Title('Отзывы');
     this.title.title.classList.add('title-comment');

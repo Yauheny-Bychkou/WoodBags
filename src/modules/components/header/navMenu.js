@@ -1,8 +1,7 @@
 import ListItem from './listItem';
 import Link from './link';
 import BurgerMenu from './burgerMenu';
-import ApiService from '../api-service/api-service';
-
+import { structureHeader } from '../structure/structure';
 class NavMenu {
   container = document.createElement('div');
   headerWrapper = document.createElement('div');
@@ -10,18 +9,14 @@ class NavMenu {
   headerWrapperList = document.createElement('ul');
   constructor(type) {
     this.typeStructure = type;
-    this.service = new ApiService();
     this.burgerMenu = new BurgerMenu();
     this.appendWrappers();
-    this.getStructure();
+    this.getList();
     this.addClassList();
   }
-  async getStructure() {
-    const structure = await this.service.getStructure(this.typeStructure);
-    this.getList(structure);
-  }
-  getList(structure) {
-    structure.links.forEach((link) => {
+
+  getList() {
+    structureHeader.links.forEach((link) => {
       if (link.name !== 'svg') {
         this.headerWrapperList.append(new ListItem(link, 'header').element);
       }

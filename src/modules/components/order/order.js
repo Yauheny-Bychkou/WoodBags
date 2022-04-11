@@ -1,6 +1,6 @@
 import Title from '../title/title';
-import ApiService from '../api-service/api-service';
 import Stage from './stage';
+import { structureOrder } from '../structure/structure';
 import './style.css';
 
 class Order {
@@ -14,22 +14,18 @@ class Order {
     this.button.innerHTML = 'Контакты';
     this.button.classList.add('order-button');
     this.container.classList.add('container');
-    this.service = new ApiService();
     this.type = type;
     this.stageWrapper.classList.add('stage-wrapper');
     this.orderWrapper.classList.add('order-wrapper');
     this.element.classList.add('order', 'none');
     this.orderWrapper.append(this.stageWrapper, this.button);
     this.container.append(this.orderWrapper);
-    this.getStructure();
+    this.element.append(new Title(structureOrder.title).element, this.container);
+    this.getStages();
   }
-  async getStructure() {
-    const structure = await this.service.getStructure(this.type);
-    this.element.append(new Title(structure.title).element, this.container);
-    this.getStages(structure);
-  }
-  getStages(structure) {
-    structure.stages.forEach((elem, i) => {
+
+  getStages() {
+    structureOrder.stages.forEach((elem, i) => {
       this.stageWrapper.append(new Stage(elem.stage, i).element);
     });
   }

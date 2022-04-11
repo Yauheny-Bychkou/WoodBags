@@ -1,5 +1,5 @@
 import './style.css';
-import ApiService from '../api-service/api-service';
+import { structureGreeting } from '../structure/structure';
 
 class Greeting {
   element = document.createElement('section');
@@ -7,20 +7,15 @@ class Greeting {
   constructor(type) {
     this.img.classList.add('greeting-img');
     this.element.setAttribute('id', 'main');
-    this.service = new ApiService();
     this.typeStructure = type;
     this.element.classList.add('greeting', 'none');
-    this.getStructure();
-  }
-  async getStructure() {
-    const structure = await this.service.getStructure(this.typeStructure);
-    this.img.setAttribute('src', structure.img);
+    this.img.setAttribute('src', structureGreeting.img);
     this.img.onload = () => {
       this.element.prepend(this.img);
-      this.element.insertAdjacentHTML('afterbegin', this.getCode(structure));
+      this.element.insertAdjacentHTML('afterbegin', this.getGreetingWrapper(structureGreeting));
     };
   }
-  getCode(structure) {
+  getGreetingWrapper(structure) {
     return `
      <div class="greeting-wrapper">
         <h1 class="greeting-wrapper__title">${structure.title}</h1>

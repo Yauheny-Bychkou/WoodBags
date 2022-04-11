@@ -1,8 +1,8 @@
 import Title from '../title/title';
-import ApiService from '../api-service/api-service';
+import { structureCare, structureWhy } from '../structure/structure';
 import './style.css';
 
-class SectionText {
+class List {
   element = document.createElement('section');
   container = document.createElement('div');
   whyWrapperText = document.createElement('div');
@@ -10,27 +10,23 @@ class SectionText {
 
   constructor(type) {
     this.type = type;
-    this.service = new ApiService();
+    this.structure = this.type === 'care' ? structureCare : structureWhy;
     this.element.classList.add('sectionText', 'none');
     this.container.classList.add('container');
     this.whyWrapperText.classList.add('sectionText-text');
     this.container.append(this.whyWrapperText);
-    this.getStructure();
+    this.getPoints();
   }
-  async getStructure() {
-    const structure = await this.service.getStructure(this.type);
-    this.getPoints(structure);
-  }
-  getPoints(structure) {
-    this.element.setAttribute('id', structure.type);
-    const title = new Title(structure.title);
+  getPoints() {
+    this.element.setAttribute('id', this.structure.type);
+    const title = new Title(this.structure.title);
     const titleElement = title.element;
-    title.title.classList.add(`title-${structure.type}`);
+    title.title.classList.add(`title-${this.structure.type}`);
     this.element.append(titleElement, this.container);
-    structure.points.forEach((elem, i) => {
+    this.structure.points.forEach((elem, i) => {
       if (this.type === 'why' && i === 4) {
-        this.whyWrapperText.append(this.getCause(elem.point, i, structure.namePoint, true));
-      } else this.whyWrapperText.append(this.getCause(elem.point, i, structure.namePoint, false));
+        this.whyWrapperText.append(this.getCause(elem.point, i, this.structure.namePoint, true));
+      } else this.whyWrapperText.append(this.getCause(elem.point, i, this.structure.namePoint, false));
     });
   }
   getCause(cause, number, namePoint, link) {
@@ -55,4 +51,4 @@ class SectionText {
     return element;
   }
 }
-export default SectionText;
+export default List;

@@ -1,5 +1,5 @@
-import ApiService from '../api-service/api-service';
 import ListItem from '../header/listItem';
+import { structureHeader } from '../structure/structure';
 import './style.css';
 
 class Menu {
@@ -17,18 +17,14 @@ class Menu {
     this.element.classList.add('menu', 'none');
     this.nav.classList.add('menu-nav');
     this.list.classList.add('menu-list');
-    this.service = new ApiService();
     this.list.prepend(this.name);
     this.nav.append(this.list);
     this.element.append(this.lineTop, this.nav, this.lineBottom);
-    this.getStructure();
+    this.getList();
   }
-  async getStructure() {
-    const structure = await this.service.getStructure('header');
-    this.getList(structure.links);
-  }
-  getList(structure) {
-    structure.forEach((link) => {
+
+  getList() {
+    structureHeader.links.forEach((link) => {
       this.list.append(new ListItem(link, 'menu').element);
     });
   }

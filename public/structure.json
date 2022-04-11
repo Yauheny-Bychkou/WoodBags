@@ -1,51 +1,5 @@
 [
   {
-    "type": "header",
-    "links": [
-      { "nameTranslate": "Главная", "name": "main" },
-      { "nameTranslate": "О бренде", "name": "about" },
-      { "nameTranslate": "Каталог", "name": "catalog" },
-      { "nameTranslate": "Уход", "name": "care" },
-      { "nameTranslate": "Заказать", "name": "order" },
-      { "nameTranslate": "Доставка и оплата", "name": "delivery" },
-      { "nameTranslate": "Контакты", "name": "contacts" },
-      { "nameTranslate": "Отызвы", "name": "reviews" },
-      { "nameTranslate": "", "name": "svg" }
-    ]
-  },
-  {
-    "type": "greeting",
-    "img": "main.jpg",
-    "title": "Woodbag.s",
-    "description": "Деревянные шедевры ручной работы",
-    "nameButton": "Каталог"
-  },
-  {
-    "type": "galery",
-    "title": "Каталог",
-    "cards": [
-      { "nameTranslate": "Вышивка", "name": "embroidery", "img": "embroidery.jpg" },
-      { "nameTranslate": "Рамка", "name": "frame", "img": "frame.jpg" },
-      { "nameTranslate": "Минимализм", "name": "minimalism", "img": "minimalism.jpg" },
-      { "nameTranslate": "Конструктор", "name": "constructor", "img": "constructor.jpg" },
-      { "nameTranslate": "Авоськи", "name": "stringBag", "img": "stringBag.jpg" },
-      { "nameTranslate": "Броши", "name": "brooches", "img": "brooches.jpg" }
-    ]
-  },
-  {
-    "type": "care",
-    "title": "Как ухаживать за деревянными изделиями?",
-    "namePoint": "Совет",
-    "points": [
-      { "point": "Воздерживаться от прогулок под дождем и снегом" },
-      { "point": "Только качественные и проверенные материалы." },
-      {
-        "point": "После попадания капелек влаги на сумочку, протереть сухой салфеткой. Ни в коем случае не оставлять капельки на длительное время на деревянной поверхности!"
-      },
-      { "point": "Не оставлять во влажных помещениях (сауна, баня, ванная комната)." }
-    ]
-  },
-  {
     "type": "order",
     "title": "Заказать",
     "stages": [

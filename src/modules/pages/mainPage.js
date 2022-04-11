@@ -2,7 +2,7 @@ import About from '../components/about/about';
 import Greeting from '../components/greeting/greeting';
 import Header from '../components/header/header';
 import Galery from '../components/galery/galery';
-import SectionText from '../components/sectionText/sectionText';
+import List from '../components/List/List';
 import Order from '../components/order/order';
 import Comment from '../components/comments/comment';
 import Footer from '../components/footer/footer';
@@ -10,28 +10,36 @@ import Menu from '../components/Menu/Menu';
 import Contact from '../components/contacts/contacts';
 import Delivery from '../components/delivery/delivery';
 import Collage from '../components/collage/collage';
-import Why from '../components/why/why';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 class MainPage {
+  menu = new Menu();
+  header = new Header();
+  greeting = new Greeting();
+  about = new About();
+  galery = new Galery();
+  why = new List('why');
+  advice = new List('care');
+  order = new Order();
+  comment = new Comment();
+  footer = new Footer();
+  contacts = new Contact();
+  delivery = new Delivery();
+  collage = new Collage();
   constructor() {
-    document.body.innerHTML = '';
-    this.menu = new Menu();
-    this.header = new Header('header');
-    this.greeting = new Greeting('greeting');
-    this.about = new About();
-    this.galery = new Galery();
-    this.why = new Why();
-    this.advice = new SectionText('care');
-    this.order = new Order('order');
-    this.comment = new Comment('comments');
-    this.footer = new Footer();
-    this.contacts = new Contact();
-    this.delivery = new Delivery();
-    this.collage = new Collage();
+    this.appendElements();
+    this.showElementsAfterOnLoad();
+    this.initSlider();
+    this.addEventListenerToCalalogButton();
+    this.addEventListenerToBurgerButton();
+    this.addEventListenerToAnchorHeader();
+    this.addEventListenerToAnchorMenu();
+    this.addEventListenerToLinkForm();
+  }
+  appendElements() {
     document.body.append(
       this.header.element,
       this.greeting.element,
@@ -47,6 +55,8 @@ class MainPage {
       this.footer.element,
       this.menu.element
     );
+  }
+  showElementsAfterOnLoad() {
     window.onload = () => {
       setTimeout(() => {
         this.header.element.classList.remove('none');
@@ -64,12 +74,6 @@ class MainPage {
         this.menu.element.classList.remove('none');
       }, 50);
     };
-    this.initSlider();
-    this.addEventListenerToCalalogButton();
-    this.addEventListenerToBurgerButton();
-    this.addEventListenerToAnchorHeader();
-    this.addEventListenerToAnchorMenu();
-    this.addEventListenerToLinkForm();
   }
   addEventListenerToLinkForm() {
     this.why.link.addEventListener('click', (e) => this.scrollToAnchor(e));

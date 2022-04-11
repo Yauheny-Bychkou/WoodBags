@@ -1,4 +1,5 @@
 import Title from '../title/title';
+import { structureAbout } from '../structure/structure';
 import './style.css';
 
 class About {
@@ -29,14 +30,11 @@ class About {
     this.aboutWrapperDescriptionBottom.classList.add('about-wrapper__description');
   }
   addContent() {
-    this.aboutWrapperImage.setAttribute('src', 'about.jpg');
+    this.aboutWrapperImage.setAttribute('src', structureAbout.img);
     this.aboutWrapperImage.setAttribute('alt', 'about');
-    this.aboutWrapperDescriptionTop.innerHTML =
-      'Меня зовут Аня, мне 25 и я технарь, поэтому дрелью и отверткой владею профессионально. Закончила БНТУ, энергетический факультет, и как это часто бывает:';
-    this.aboutWrapperDescriptionBold.innerHTML = '&laquo;...поняла, что диплом это хорошо, а бизнес лучше.&raquo';
-    this.aboutWrapperDescriptionBottom.innerHTML = `Поиски «своего дела» были долгими и мучительными, пробовала себя в разных сферах. Потом я влюбилась в идею
-            деревянной сумки и создала своего первого «Розового Фламинго», потом подруге сделала сумочку, потом еще
-            одну, а потом их оказалось больше 200 и они учувствуют в показах, выставках и ярмарках.`;
+    this.aboutWrapperDescriptionTop.innerHTML = structureAbout.textTop;
+    this.aboutWrapperDescriptionBold.innerHTML = structureAbout.textBold;
+    this.aboutWrapperDescriptionBottom.innerHTML = structureAbout.textBottom;
   }
   appendWrapper() {
     this.aboutWrapperText.append(
@@ -50,7 +48,7 @@ class About {
       this.aboutWrapperImg.append(this.aboutWrapperImage);
       this.aboutWrapperImage.setAttribute('loading', 'lazy');
     };
-    this.element.append(new Title('О Бренде').element, this.container);
+    this.element.append(new Title(structureAbout.title).element, this.container);
   }
 }
 export default About;

@@ -4,9 +4,9 @@ class Footer {
   element = document.createElement('footer');
   constructor() {
     this.element.classList.add('footer', 'none');
-    this.element.insertAdjacentHTML('beforeend', this.getCode());
+    this.element.insertAdjacentHTML('beforeend', this.getFooterWrapper());
   }
-  getCode() {
+  getFooterWrapper() {
     return `
       <div class="footer-wrapper">
         <p class="footer-text">Ремесленник: <a class="footer-link" href="#">Павлюкова Анна Евгеньевна</a></p>
