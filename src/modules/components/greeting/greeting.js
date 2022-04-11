@@ -4,10 +4,9 @@ import { structureGreeting } from '../structure/structure';
 class Greeting {
   element = document.createElement('section');
   img = document.createElement('img');
-  constructor(type) {
+  constructor() {
     this.img.classList.add('greeting-img');
     this.element.setAttribute('id', 'main');
-    this.typeStructure = type;
     this.element.classList.add('greeting', 'none');
     this.img.setAttribute('src', structureGreeting.img);
     this.img.onload = () => {

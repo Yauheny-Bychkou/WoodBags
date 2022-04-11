@@ -11,9 +11,8 @@ class Comment {
   arrowPrev = document.createElement('img');
   arrowNext = document.createElement('img');
 
-  constructor(type) {
+  constructor() {
     this.element.setAttribute('id', 'reviews');
-    this.type = type;
     this.title = new Title('Отзывы');
     this.title.title.classList.add('title-comment');
     this.arrowPrev.setAttribute('src', 'arrow-left.svg');

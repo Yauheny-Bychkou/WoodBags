@@ -9,8 +9,7 @@ class List {
   link = document.createElement('a');
 
   constructor(type) {
-    this.type = type;
-    this.structure = this.type === 'care' ? structureCare : structureWhy;
+    this.structure = type === 'care' ? structureCare : structureWhy;
     this.element.classList.add('sectionText', 'none');
     this.container.classList.add('container');
     this.whyWrapperText.classList.add('sectionText-text');

@@ -7,8 +7,7 @@ class NavMenu {
   headerWrapper = document.createElement('div');
   headerWrapperNav = document.createElement('nav');
   headerWrapperList = document.createElement('ul');
-  constructor(type) {
-    this.typeStructure = type;
+  constructor() {
     this.burgerMenu = new BurgerMenu();
     this.appendWrappers();
     this.getList();

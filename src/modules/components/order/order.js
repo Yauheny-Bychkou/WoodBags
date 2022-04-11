@@ -9,12 +9,11 @@ class Order {
   stageWrapper = document.createElement('div');
   container = document.createElement('div');
   button = document.createElement('button');
-  constructor(type) {
-    this.element.setAttribute('id', type);
+  constructor() {
+    this.element.setAttribute('id', structureOrder.type);
     this.button.innerHTML = 'Контакты';
     this.button.classList.add('order-button');
     this.container.classList.add('container');
-    this.type = type;
     this.stageWrapper.classList.add('stage-wrapper');
     this.orderWrapper.classList.add('order-wrapper');
     this.element.classList.add('order', 'none');
