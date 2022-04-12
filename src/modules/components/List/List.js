@@ -9,6 +9,7 @@ class List {
   link = document.createElement('a');
 
   constructor(type) {
+    this.type = type;
     this.structure = type === 'care' ? structureCare : structureWhy;
     this.element.classList.add('sectionText', 'none');
     this.container.classList.add('container');
@@ -25,7 +26,9 @@ class List {
     this.structure.points.forEach((elem, i) => {
       if (this.type === 'why' && i === 4) {
         this.whyWrapperText.append(this.getCause(elem.point, i, this.structure.namePoint, true));
-      } else this.whyWrapperText.append(this.getCause(elem.point, i, this.structure.namePoint, false));
+      } else {
+        this.whyWrapperText.append(this.getCause(elem.point, i, this.structure.namePoint, false));
+      }
     });
   }
   getCause(cause, number, namePoint, link) {
