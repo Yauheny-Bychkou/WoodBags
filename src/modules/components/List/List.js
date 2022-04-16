@@ -1,5 +1,5 @@
 import Title from '../title/title';
-import { structureCare, structureWhy } from '../structure/structure';
+import { structureCare, structureWhy } from './structure';
 import './style.css';
 
 class List {

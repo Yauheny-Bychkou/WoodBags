@@ -10,6 +10,7 @@ import Menu from '../components/Menu/Menu';
 import Contact from '../components/contacts/contacts';
 import Delivery from '../components/delivery/delivery';
 import Collage from '../components/collage/collage';
+import Modal from '../components/modal/modal';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -29,6 +30,7 @@ class MainPage {
   contacts = new Contact();
   delivery = new Delivery();
   collage = new Collage();
+  modal = new Modal();
   constructor() {
     this.appendElements();
     this.showElementsAfterOnLoad();
@@ -38,6 +40,25 @@ class MainPage {
     this.addEventListenerToAnchorHeader();
     this.addEventListenerToAnchorMenu();
     this.addEventListenerToLinkForm();
+    this.addEventListenerToGaleryWrapper();
+  }
+
+  addEventListenerToGaleryWrapper() {
+    this.galery.element.addEventListener('click', (e) => {
+      if (e.target.classList.contains('galery-overlay-forClick')) {
+        this.modal.element.classList.add('modal-active');
+        this.modal.content.classList.add('modal-content-active');
+        document.body.classList.add('overflow-hidden');
+      }
+    });
+  }
+  addEventListenerToDocumentForRemoveModalActive() {
+    document.addEventListener('click', () => {
+      if (this.modal.element.classList.contains('modal-active')) {
+        this.modal.element.classList.remove('modal-active');
+        this.modal.content.classList.remove('modal-content-active');
+      }
+    });
   }
   appendElements() {
     document.body.append(
@@ -53,7 +74,8 @@ class MainPage {
       this.delivery.element,
       this.contacts.element,
       this.footer.element,
-      this.menu.element
+      this.menu.element,
+      this.modal.element
     );
   }
   showElementsAfterOnLoad() {

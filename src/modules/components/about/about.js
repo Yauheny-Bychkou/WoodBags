@@ -1,5 +1,5 @@
 import Title from '../title/title';
-import { structureAbout } from '../structure/structure';
+import { structureAbout } from './structure';
 import './style.css';
 
 class About {

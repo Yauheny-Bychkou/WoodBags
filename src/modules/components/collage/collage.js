@@ -1,4 +1,4 @@
-import { structureCollage } from '../structure/structure';
+import { structureCollage } from './structure';
 import './style.css';
 
 class Collage {

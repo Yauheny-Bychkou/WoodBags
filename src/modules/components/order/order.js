@@ -1,6 +1,6 @@
 import Title from '../title/title';
 import Stage from './stage';
-import { structureOrder } from '../structure/structure';
+import { structureOrder } from './structure';
 import './style.css';
 
 class Order {

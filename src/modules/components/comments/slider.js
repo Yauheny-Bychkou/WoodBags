@@ -1,4 +1,4 @@
-import { structureSlider } from '../structure/structure';
+import { structureSlider } from './structure';
 
 class Slider {
   swiper = document.createElement('div');

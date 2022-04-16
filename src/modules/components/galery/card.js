@@ -2,7 +2,8 @@ class Card {
   element = document.createElement('div');
   wrapperImg = document.createElement('div');
   img = document.createElement('img');
-  overlay = document.createElement('div');
+  overlayDark = document.createElement('div');
+  overlayForClick = document.createElement('div');
   wrapperAbsolute = document.createElement('div');
   title = document.createElement('h4');
   constructor(text, className, img) {
@@ -16,11 +17,12 @@ class Card {
     this.title.innerHTML = text;
     this.wrapperAbsolute.append(this.title);
     this.wrapperAbsolute.classList.add('galery-absolute');
-    this.overlay.classList.add('galery-overlay');
+    this.overlayDark.classList.add('galery-overlay-dark');
+    this.overlayForClick.classList.add('galery-overlay-forClick');
     this.img.onload = () => {
       this.wrapperImg.prepend(this.img);
     };
-    this.wrapperImg.append(this.wrapperAbsolute, this.overlay);
+    this.wrapperImg.append(this.wrapperAbsolute, this.overlayDark, this.overlayForClick);
     this.element.append(this.wrapperImg);
   }
 }

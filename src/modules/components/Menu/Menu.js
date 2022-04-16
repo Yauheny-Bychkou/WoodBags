@@ -1,5 +1,5 @@
 import ListItem from '../header/listItem';
-import { structureHeader } from '../structure/structure';
+import { structureHeader } from './structure';
 import './style.css';
 
 class Menu {

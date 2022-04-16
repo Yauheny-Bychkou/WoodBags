@@ -1,6 +1,6 @@
 import Title from '../title/title';
 import Card from './card';
-import { structureGalery } from '../structure/structure';
+import { structureGalery } from './structure';
 import './style.css';
 
 class Galary {

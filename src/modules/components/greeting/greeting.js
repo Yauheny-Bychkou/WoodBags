@@ -1,5 +1,5 @@
 import './style.css';
-import { structureGreeting } from '../structure/structure';
+import { structureGreeting } from './structure';
 
 class Greeting {
   element = document.createElement('section');
