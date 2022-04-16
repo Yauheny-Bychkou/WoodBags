@@ -41,6 +41,10 @@ class MainPage {
     this.addEventListenerToAnchorMenu();
     this.addEventListenerToLinkForm();
     this.addEventListenerToGaleryWrapper();
+    document.documentElement.style.setProperty(
+      '--scrollbar-width',
+      window.innerWidth - document.documentElement.clientWidth + 'px'
+    );
   }
 
   addEventListenerToGaleryWrapper() {

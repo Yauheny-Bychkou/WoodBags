@@ -10,8 +10,7 @@ body {
 }
 .overflow-hidden {
   overflow-y: hidden;
-  overflow-y: scroll;
-  /* margin: 0 17px 0 0; */
+  margin-right: var(--scrollbar-width);
 }
 .container {
   max-width: 1170px;
