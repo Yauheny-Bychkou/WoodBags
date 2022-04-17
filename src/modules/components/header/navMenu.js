@@ -1,6 +1,6 @@
 import ListItem from './listItem';
 import Link from './link';
-import BurgerMenu from './burgerMenu';
+import BurgerMenu from '../burgerMenu/burgerMenu';
 import { structureHeader } from './structure';
 class NavMenu {
   container = document.createElement('div');

@@ -22,6 +22,11 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-modal {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 .container-collage {
   max-width: 750px;
   margin: 0 auto;
@@ -49,6 +54,11 @@ body {
     max-width: 1200px;
   }
 }
+@media (max-width: 1230px) {
+  .container-modal {
+    max-width: 1050px;
+  }
+}
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
@@ -61,6 +71,11 @@ body {
   }
   .container-galery {
     max-width: 570px;
+  }
+}
+@media (max-width: 1050px) {
+  .container-modal {
+    max-width: 720px;
   }
 }
 @media (max-width: 992px) {

@@ -41,18 +41,40 @@ class MainPage {
     this.addEventListenerToAnchorMenu();
     this.addEventListenerToLinkForm();
     this.addEventListenerToGaleryWrapper();
-    document.documentElement.style.setProperty(
-      '--scrollbar-width',
-      window.innerWidth - document.documentElement.clientWidth + 'px'
-    );
+    this.setPropertyForOverflow();
+    this.addEventListenerToModalHeader();
+    this.addEventListenerToModalBurger();
   }
-
+  addEventListenerToModalBurger() {
+    this.modal.wrapperBurger.addEventListener('click', (e) => {
+      if (e.target.classList.contains('menu-btn-modal') || e.target.classList.contains('menu-span-modal')) {
+        this.modal.wrapperBurger.children[0].children[0].classList.toggle('menu-btn__active');
+        this.modal.modalHeader.classList.toggle('modal-header-active');
+      }
+    });
+  }
+  addEventListenerToModalHeader() {
+    this.modal.modalNav.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (e.target.href && e.target.dataset.id !== 'main') {
+        this.modal.addWrapperProducts(e.target.dataset.id);
+      } else if (e.target.href && e.target.dataset.id === 'main') {
+        Promise.resolve()
+          .then(() => document.body.classList.remove('overflow-hidden'))
+          .then(() => {
+            this.modal.element.classList.remove('modal-active');
+            this.modal.content.classList.remove('modal-content-active');
+          });
+      }
+    });
+  }
   addEventListenerToGaleryWrapper() {
     this.galery.element.addEventListener('click', (e) => {
       if (e.target.classList.contains('galery-overlay-forClick')) {
         this.modal.element.classList.add('modal-active');
         this.modal.content.classList.add('modal-content-active');
         document.body.classList.add('overflow-hidden');
+        this.modal.addWrapperProducts(e.target.id);
       }
     });
   }
@@ -111,7 +133,6 @@ class MainPage {
       }
     });
   }
-
   addEventListenerToAnchorMenu() {
     this.menu.nav.addEventListener('click', (e) => {
       Promise.resolve()
@@ -183,6 +204,12 @@ class MainPage {
       behavior: 'smooth',
       block: 'start',
     });
+  }
+  setPropertyForOverflow() {
+    document.documentElement.style.setProperty(
+      '--scrollbar-width',
+      window.innerWidth - document.documentElement.clientWidth + 'px'
+    );
   }
 }
 export default MainPage;

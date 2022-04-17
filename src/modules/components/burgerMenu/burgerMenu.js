@@ -1,3 +1,5 @@
+import './style.css';
+
 class BurgerMenu {
   element = document.createElement('div');
   link = document.createElement('a');

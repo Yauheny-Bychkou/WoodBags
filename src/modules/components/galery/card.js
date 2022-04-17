@@ -6,7 +6,7 @@ class Card {
   overlayForClick = document.createElement('div');
   wrapperAbsolute = document.createElement('div');
   title = document.createElement('h4');
-  constructor(text, className, img) {
+  constructor(text, name, img) {
     this.element.classList.add('galery-box');
     this.title.classList.add('galery-title');
     this.wrapperImg.classList.add('galery-container');
@@ -19,6 +19,7 @@ class Card {
     this.wrapperAbsolute.classList.add('galery-absolute');
     this.overlayDark.classList.add('galery-overlay-dark');
     this.overlayForClick.classList.add('galery-overlay-forClick');
+    this.overlayForClick.setAttribute('id', name);
     this.img.onload = () => {
       this.wrapperImg.prepend(this.img);
     };
