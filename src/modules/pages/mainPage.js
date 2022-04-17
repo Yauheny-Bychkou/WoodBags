@@ -48,6 +48,7 @@ class MainPage {
   addEventListenerToModalBurger() {
     this.modal.wrapperBurger.addEventListener('click', (e) => {
       if (e.target.classList.contains('menu-btn-modal') || e.target.classList.contains('menu-span-modal')) {
+        e.preventDefault();
         this.modal.wrapperBurger.children[0].children[0].classList.toggle('menu-btn__active');
         this.modal.modalHeader.classList.toggle('modal-header-active');
       }
@@ -58,12 +59,14 @@ class MainPage {
       e.preventDefault();
       if (e.target.href && e.target.dataset.id !== 'main') {
         this.modal.addWrapperProducts(e.target.dataset.id);
+        this.modal.modalHeader.classList.remove('modal-header-active');
       } else if (e.target.href && e.target.dataset.id === 'main') {
         Promise.resolve()
           .then(() => document.body.classList.remove('overflow-hidden'))
           .then(() => {
             this.modal.element.classList.remove('modal-active');
             this.modal.content.classList.remove('modal-content-active');
+            this.modal.modalHeader.classList.remove('modal-header-active');
           });
       }
     });
@@ -190,9 +193,11 @@ class MainPage {
   addEventListenerToBurgerButton() {
     this.header.navMenu.burgerMenu.element.addEventListener('click', (e) => {
       e.preventDefault();
-      document.body.classList.add('overflow-hidden');
       this.menu.element.classList.toggle('menu-visible');
       if (e.target.classList.contains('menu-btn') || e.target.classList.contains('menu-span')) {
+        if (!this.header.navMenu.burgerMenu.element.children[0].classList.contains('menu-btn__active')) {
+          document.body.classList.add('overflow-hidden');
+        } else document.body.classList.remove('overflow-hidden');
         this.header.navMenu.burgerMenu.element.children[0].classList.toggle('menu-btn__active');
       }
     });

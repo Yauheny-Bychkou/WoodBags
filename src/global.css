@@ -99,6 +99,11 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 720px) {
+  .container-modal {
+    max-width: 428px;
+  }
+}
 @media (max-width: 767px) {
   .container {
     max-width: 576px;
@@ -114,6 +119,11 @@ body {
   .title-why {
     width: 200px;
     text-align: center;
+  }
+}
+@media (max-width: 430px) {
+  .container-modal {
+    max-width: 375px;
   }
 }
 @media (max-width: 400px) {
