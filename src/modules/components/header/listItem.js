@@ -10,14 +10,6 @@ class ListItem {
     this.element.append(this.link, this.line);
     this.line.classList.add(`${wrapper}-item-line`);
     this.link.setAttribute('data-id', link.name);
-    // if (wrapper === 'header') {
-    //   this.link.setAttribute('data-id', link.name);
-    // }
-    // if (wrapper === 'modal') {
-    //   const line = document.createElement('div');
-    //   line.classList.add('modal-item-line');
-
-    // }
   }
 }
 export default ListItem;
