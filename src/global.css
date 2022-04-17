@@ -101,7 +101,7 @@ body {
 }
 @media (max-width: 720px) {
   .container-modal {
-    max-width: 428px;
+    max-width: 400px;
   }
 }
 @media (max-width: 767px) {

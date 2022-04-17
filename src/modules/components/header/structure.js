@@ -6,8 +6,8 @@ export const structureHeader = {
     { nameTranslate: 'Каталог', name: 'catalog' },
     { nameTranslate: 'Уход', name: 'care' },
     { nameTranslate: 'Заказать', name: 'order' },
+    { nameTranslate: 'Отзывы', name: 'reviews' },
     { nameTranslate: 'Доставка и оплата', name: 'delivery' },
     { nameTranslate: 'Контакты', name: 'contacts' },
-    { nameTranslate: 'Отызвы', name: 'reviews' },
   ],
 };

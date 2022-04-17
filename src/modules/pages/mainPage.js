@@ -44,6 +44,36 @@ class MainPage {
     this.setPropertyForOverflow();
     this.addEventListenerToModalHeader();
     this.addEventListenerToModalBurger();
+    this.addActiveClassToHeaderLink();
+  }
+  addActiveClassToHeaderLink() {
+    const sections = document.querySelectorAll('section');
+    const nav = document.querySelector('.header-wrapper__nav');
+    const nav_height = nav.offsetHeight;
+
+    document.addEventListener('scroll', (e) => {
+      const cur_pos = document.documentElement.scrollTop;
+
+      sections.forEach((item) => {
+        const top = item.offsetTop - nav_height;
+        const bottom = top + item.offsetHeight;
+        if (cur_pos >= top && cur_pos <= bottom) {
+          document.querySelectorAll('.header-wrapper__link').forEach((item) => {
+            item.parentNode.children[1].classList.remove('header-item-line--active');
+          });
+          document.querySelectorAll('.menu-wrapper__link').forEach((elem) => {
+            if (elem.dataset.id === item.id) {
+              elem.parentElement.children[1].classList.add('menu-item-line--active');
+            } else elem.parentElement.children[1].classList.remove('menu-item-line--active');
+          });
+          if (document.querySelector(`a[href|="#${item.id}"]`) !== null && item.id !== '') {
+            document
+              .querySelector(`a[href|="#${item.id}"]`)
+              .parentNode.children[1].classList.add('header-item-line--active');
+          }
+        }
+      });
+    });
   }
   addEventListenerToModalBurger() {
     this.modal.wrapperBurger.addEventListener('click', (e) => {
@@ -58,8 +88,14 @@ class MainPage {
     this.modal.modalNav.addEventListener('click', (e) => {
       e.preventDefault();
       if (e.target.href && e.target.dataset.id !== 'main') {
+        document.querySelectorAll('.modal-item-line').forEach((elem) => {
+          if (elem === e.target.parentElement.children[1]) {
+            elem.classList.add('modal-item-line--active');
+          } else elem.classList.remove('modal-item-line--active');
+        });
         this.modal.addWrapperProducts(e.target.dataset.id);
         this.modal.modalHeader.classList.remove('modal-header-active');
+        this.modal.wrapperBurger.children[0].children[0].classList.remove('menu-btn__active');
       } else if (e.target.href && e.target.dataset.id === 'main') {
         Promise.resolve()
           .then(() => document.body.classList.remove('overflow-hidden'))
@@ -67,6 +103,7 @@ class MainPage {
             this.modal.element.classList.remove('modal-active');
             this.modal.content.classList.remove('modal-content-active');
             this.modal.modalHeader.classList.remove('modal-header-active');
+            this.modal.wrapperBurger.children[0].children[0].classList.remove('menu-btn__active');
           });
       }
     });
@@ -78,6 +115,11 @@ class MainPage {
         this.modal.content.classList.add('modal-content-active');
         document.body.classList.add('overflow-hidden');
         this.modal.addWrapperProducts(e.target.id);
+        document.querySelectorAll('.modal-item-line').forEach((elem) => {
+          if (elem === document.querySelector(`a[href='#${e.target.id}']`).parentNode.children[1]) {
+            elem.classList.add('modal-item-line--active');
+          } else elem.classList.remove('modal-item-line--active');
+        });
       }
     });
   }
