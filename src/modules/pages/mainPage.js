@@ -169,7 +169,9 @@ class MainPage {
     };
   }
   addEventListenerToLinkForm() {
-    this.why.link.addEventListener('click', (e) => this.scrollToAnchor(e));
+    this.why.link.addEventListener('click', (e) => {
+      this.scrollToAnchor(e);
+    });
   }
   addEventListenerToCalalogButton() {
     this.greeting.element.addEventListener('click', (e) => {
