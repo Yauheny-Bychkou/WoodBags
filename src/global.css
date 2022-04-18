@@ -9,7 +9,10 @@ body {
   visibility: hidden;
 }
 .overflow-hidden {
-  overflow-y: hidden;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  /* overflow-y: hidden; */
   /* margin-right: var(--scrollbar-width); */
 }
 .container {
