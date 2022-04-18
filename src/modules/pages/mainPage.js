@@ -97,6 +97,7 @@ class MainPage {
         this.modal.modalHeader.classList.remove('modal-header-active');
         this.modal.wrapperBurger.children[0].children[0].classList.remove('menu-btn__active');
       } else if (e.target.href && e.target.dataset.id === 'main') {
+        this.header.element.classList.remove('header-overflow');
         Promise.resolve()
           .then(() => document.body.classList.remove('overflow-hidden'))
           .then(() => {
@@ -115,6 +116,7 @@ class MainPage {
         this.modal.content.classList.add('modal-content-active');
         document.body.classList.add('overflow-hidden');
         this.modal.addWrapperProducts(e.target.id);
+        this.header.element.classList.add('header-overflow');
         document.querySelectorAll('.modal-item-line').forEach((elem) => {
           if (elem === document.querySelector(`a[href='#${e.target.id}']`).parentNode.children[1]) {
             elem.classList.add('modal-item-line--active');

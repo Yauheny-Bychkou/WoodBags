@@ -5,6 +5,9 @@
   z-index: 6;
   width: 100%;
 }
+.header-overflow {
+  padding-right: var(--scrollbar-width);
+}
 .header-wrapper {
   display: flex;
   align-items: center;
