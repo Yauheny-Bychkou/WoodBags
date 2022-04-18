@@ -13,7 +13,7 @@ body {
   position: relative;
   height: 100%;
   /* overflow-y: hidden; */
-  margin-right: var(--scrollbar-width);
+  /* margin-right: var(--scrollbar-width); */
 }
 .container {
   max-width: 1170px;
