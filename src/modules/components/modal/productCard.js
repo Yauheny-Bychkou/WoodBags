@@ -5,10 +5,11 @@ class ProductCard {
   nameProduct = document.createElement('h3');
   priceProduct = document.createElement('h4');
   button = document.createElement('button');
-  constructor(img, name, price) {
+  constructor(img, name, price, id) {
     this.price = price;
     this.name = name;
     this.img = img;
+    this.id = id;
     this.addContent();
     this.appendWrappers();
     this.addClassName();
@@ -19,6 +20,7 @@ class ProductCard {
     this.nameProduct.innerHTML = this.name;
     this.priceProduct.innerHTML = this.price;
     this.button.innerHTML = 'Подробнее';
+    this.button.setAttribute('id', this.id);
   }
   appendWrappers() {
     this.imgProduct.onload = () => this.wrapperImg.append(this.imgProduct);

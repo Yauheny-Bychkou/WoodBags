@@ -84,4 +84,10 @@
     font-size: 16px;
     line-height: 24px;
   }
+  .menu-list {
+    padding: 15px 33px 15px 39px;
+  }
+  .menu-wrapper__item {
+    margin-bottom: 10px;
+  }
 }

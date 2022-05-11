@@ -64,7 +64,7 @@ class Modal {
     this.wrapperProducts.append(this.titleWrapper, this.wrapperCards);
     this.title.innerHTML = structureModal[typeProduct].title;
     structureModal[typeProduct].products.forEach((product) => {
-      this.wrapperCards.append(new ProductCard(product.image, product.name, product.price).element);
+      this.wrapperCards.append(new ProductCard(product.image, product.name, product.price, product.id).element);
     });
   }
 }
