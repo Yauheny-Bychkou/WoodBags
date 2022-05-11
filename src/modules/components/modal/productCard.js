@@ -5,7 +5,8 @@ class ProductCard {
   nameProduct = document.createElement('h3');
   priceProduct = document.createElement('h4');
   button = document.createElement('button');
-  constructor(img, name, price, id) {
+  constructor(img, name, price, id, type) {
+    this.type = type;
     this.price = price;
     this.name = name;
     this.img = img;
@@ -21,6 +22,7 @@ class ProductCard {
     this.priceProduct.innerHTML = this.price;
     this.button.innerHTML = 'Подробнее';
     this.button.setAttribute('id', this.id);
+    this.button.setAttribute('data-type', this.type);
   }
   appendWrappers() {
     this.imgProduct.onload = () => this.wrapperImg.append(this.imgProduct);

@@ -46,6 +46,14 @@ class MainPage {
     this.addEventListenerToModalBurger();
     this.addActiveClassToHeaderLink();
     this.addEventListenerToModalMainButton();
+    this.addEventListenerToWrapperModalContent();
+  }
+  addEventListenerToWrapperModalContent() {
+    this.modal.wrapperCards.addEventListener('click', (e) => {
+      if (e.target.classList.contains('product-button')) {
+        console.log(e.target.dataset.type, e.target.id);
+      }
+    });
   }
   addActiveClassToHeaderLink() {
     const sections = document.querySelectorAll('section');
