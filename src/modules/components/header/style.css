@@ -13,6 +13,10 @@
   align-items: center;
   justify-content: space-between;
 }
+.header-burger {
+  cursor: pointer;
+  border-radius: 50%;
+}
 .header-burger__line {
   width: 100%;
   height: 4px;

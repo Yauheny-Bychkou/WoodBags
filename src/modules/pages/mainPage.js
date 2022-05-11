@@ -194,15 +194,17 @@ class MainPage {
   }
   addEventListenerToAnchorMenu() {
     this.menu.nav.addEventListener('click', (e) => {
-      Promise.resolve()
-        .then(() => document.body.classList.remove('overflow-hidden'))
-        .then(() => {
-          this.menu.element.classList.remove('menu-visible');
-          this.header.navMenu.burgerMenu.element.children[0].classList.remove('menu-btn__active');
-          if (e.target.classList.contains('menu-wrapper__link')) {
-            this.scrollToAnchor(e);
-          }
-        });
+      if (e.target.classList.contains('menu-wrapper__link')) {
+        Promise.resolve()
+          .then(() => document.body.classList.remove('overflow-hidden'))
+          .then(() => {
+            this.menu.element.classList.remove('menu-visible');
+            this.header.navMenu.burgerMenu.element.children[0].classList.remove('menu-btn__active');
+            if (e.target.classList.contains('menu-wrapper__link')) {
+              this.scrollToAnchor(e);
+            }
+          });
+      }
     });
   }
   addEventListenerToAnchorHeader() {
