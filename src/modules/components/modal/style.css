@@ -74,6 +74,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  color: #000;
 }
 .modal-wrapper__link {
   padding: 10px;

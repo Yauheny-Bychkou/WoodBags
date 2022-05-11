@@ -87,15 +87,7 @@ class MainPage {
   }
   addEventListenerToModalMainButton() {
     this.modal.buttonMain.addEventListener('click', () => {
-      this.header.element.classList.remove('header-overflow');
-      Promise.resolve()
-        .then(() => document.body.classList.remove('overflow-hidden'))
-        .then(() => {
-          this.modal.element.classList.remove('modal-active');
-          this.modal.content.classList.remove('modal-content-active');
-          this.modal.modalHeader.classList.remove('modal-header-active');
-          this.modal.wrapperBurger.children[1].children[0].classList.remove('menu-btn__active');
-        });
+      this.closeModal();
     });
   }
   addEventListenerToModalHeader() {
@@ -112,17 +104,20 @@ class MainPage {
         this.modal.wrapperBurger.children[1].children[0].classList.remove('menu-btn__active');
       }
       if (e.target.href && e.target.dataset.id === 'main') {
-        this.header.element.classList.remove('header-overflow');
-        Promise.resolve()
-          .then(() => document.body.classList.remove('overflow-hidden'))
-          .then(() => {
-            this.modal.element.classList.remove('modal-active');
-            this.modal.content.classList.remove('modal-content-active');
-            this.modal.modalHeader.classList.remove('modal-header-active');
-            this.modal.wrapperBurger.children[1].children[0].classList.remove('menu-btn__active');
-          });
+        this.closeModal();
       }
     });
+  }
+  closeModal() {
+    this.header.element.classList.remove('header-overflow');
+    Promise.resolve()
+      .then(() => document.body.classList.remove('overflow-hidden'))
+      .then(() => {
+        this.modal.element.classList.remove('modal-active');
+        this.modal.content.classList.remove('modal-content-active');
+        this.modal.modalHeader.classList.remove('modal-header-active');
+        this.modal.wrapperBurger.children[1].children[0].classList.remove('menu-btn__active');
+      });
   }
   addEventListenerToGaleryWrapper() {
     this.galery.element.addEventListener('click', (e) => {
