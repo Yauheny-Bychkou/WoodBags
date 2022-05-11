@@ -19,6 +19,7 @@ class Modal {
   titleWrapper = document.createElement('div');
   titleLine = document.createElement('div');
   title = document.createElement('h2');
+  buttonMain = document.createElement('button');
 
   constructor() {
     this.addClassName();
@@ -32,9 +33,11 @@ class Modal {
   }
   appendWrappers() {
     const burger = new BurgerMenu();
+    this.buttonMain.innerHTML = 'На главную';
+    this.buttonMain.classList.add('modal-button__main');
     burger.link.classList.add('menu-btn-modal');
     burger.span.classList.add('menu-span-modal');
-    this.wrapperBurger.append(burger.element);
+    this.wrapperBurger.append(this.buttonMain, burger.element);
     this.modalNav.append(this.lineMenuTop, this.modalList, this.lineMenuBottom);
     this.modalHeader.append(this.modalNav);
     this.container.append(this.wrapperBurger, this.modalHeader, this.wrapperProducts);

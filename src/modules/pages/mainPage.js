@@ -45,6 +45,7 @@ class MainPage {
     this.addEventListenerToModalHeader();
     this.addEventListenerToModalBurger();
     this.addActiveClassToHeaderLink();
+    this.addEventListenerToModalMainButton();
   }
   addActiveClassToHeaderLink() {
     const sections = document.querySelectorAll('section');
@@ -79,9 +80,22 @@ class MainPage {
     this.modal.wrapperBurger.addEventListener('click', (e) => {
       if (e.target.classList.contains('menu-btn-modal') || e.target.classList.contains('menu-span-modal')) {
         e.preventDefault();
-        this.modal.wrapperBurger.children[0].children[0].classList.toggle('menu-btn__active');
+        this.modal.wrapperBurger.children[1].children[0].classList.toggle('menu-btn__active');
         this.modal.modalHeader.classList.toggle('modal-header-active');
       }
+    });
+  }
+  addEventListenerToModalMainButton() {
+    this.modal.buttonMain.addEventListener('click', () => {
+      this.header.element.classList.remove('header-overflow');
+      Promise.resolve()
+        .then(() => document.body.classList.remove('overflow-hidden'))
+        .then(() => {
+          this.modal.element.classList.remove('modal-active');
+          this.modal.content.classList.remove('modal-content-active');
+          this.modal.modalHeader.classList.remove('modal-header-active');
+          this.modal.wrapperBurger.children[1].children[0].classList.remove('menu-btn__active');
+        });
     });
   }
   addEventListenerToModalHeader() {
@@ -95,17 +109,7 @@ class MainPage {
         });
         this.modal.addWrapperProducts(e.target.dataset.id);
         this.modal.modalHeader.classList.remove('modal-header-active');
-        this.modal.wrapperBurger.children[0].children[0].classList.remove('menu-btn__active');
-      } else if (e.target.href && e.target.dataset.id === 'main') {
-        this.header.element.classList.remove('header-overflow');
-        Promise.resolve()
-          .then(() => document.body.classList.remove('overflow-hidden'))
-          .then(() => {
-            this.modal.element.classList.remove('modal-active');
-            this.modal.content.classList.remove('modal-content-active');
-            this.modal.modalHeader.classList.remove('modal-header-active');
-            this.modal.wrapperBurger.children[0].children[0].classList.remove('menu-btn__active');
-          });
+        this.modal.wrapperBurger.children[1].children[0].classList.remove('menu-btn__active');
       }
     });
   }
