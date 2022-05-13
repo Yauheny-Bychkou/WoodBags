@@ -11,6 +11,7 @@ import Contact from '../components/contacts/contacts';
 import Delivery from '../components/delivery/delivery';
 import Collage from '../components/collage/collage';
 import Modal from '../components/modal/modal';
+import Product from '../components/product/product';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -31,6 +32,7 @@ class MainPage {
   delivery = new Delivery();
   collage = new Collage();
   modal = new Modal();
+  product = new Product();
   constructor() {
     this.appendElements();
     this.showElementsAfterOnLoad();
@@ -47,11 +49,13 @@ class MainPage {
     this.addActiveClassToHeaderLink();
     this.addEventListenerToModalMainButton();
     this.addEventListenerToWrapperModalContent();
+    this.initSliderProduct();
   }
   addEventListenerToWrapperModalContent() {
     this.modal.wrapperCards.addEventListener('click', (e) => {
       if (e.target.classList.contains('product-button')) {
-        console.log(e.target.dataset.type, e.target.id);
+        this.product.showProduct(e.target.dataset.type, e.target.id);
+        this.product.element.classList.add('product-active');
       }
     });
   }
@@ -166,7 +170,8 @@ class MainPage {
       this.contacts.element,
       this.footer.element,
       this.menu.element,
-      this.modal.element
+      this.modal.element,
+      this.product.element
     );
   }
   showElementsAfterOnLoad() {
@@ -255,6 +260,63 @@ class MainPage {
         },
       },
     });
+  }
+  initSliderProduct() {
+    const swiper_1 = new Swiper('.swiper-1', {
+      modules: [Navigation, Pagination],
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.slider-product-button-next',
+        prevEl: '.slider-product-button-prev',
+      },
+      slidesPerView: 1,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 100,
+        },
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        770: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+    const swiper_2 = new Swiper('.swiper-2', {
+      modules: [Navigation, Pagination],
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.slider-product-button-next',
+        prevEl: '.slider-product-button-prev',
+      },
+      slidesPerView: 1,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 100,
+        },
+      },
+    });
+    const swipeAllSliders = (index) => {
+      swiper_1.slideToLoop(index);
+      swiper_2.slideToLoop(index);
+    };
+
+    swiper_1.on('slideChange', () => swipeAllSliders(swiper_1.realIndex));
+    swiper_2.on('slideChange', () => swipeAllSliders(swiper_2.realIndex));
   }
   addEventListenerToBurgerButton() {
     this.header.navMenu.burgerMenu.element.addEventListener('click', (e) => {

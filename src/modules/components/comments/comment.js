@@ -19,8 +19,8 @@ class Comment {
     this.arrowNext.setAttribute('src', 'arrow-right.svg');
     this.swiperButtonPrev.append(this.arrowPrev);
     this.swiperButtonNext.append(this.arrowNext);
-    this.swiperButtonPrev.classList.add('slider-button-prev', 'slider-button');
-    this.swiperButtonNext.classList.add('slider-button-next', 'slider-button');
+    this.swiperButtonPrev.classList.add('slider-button-prev', 'slider-button', 'slider-button-comment');
+    this.swiperButtonNext.classList.add('slider-button-next', 'slider-button', 'slider-button-comment');
     this.element.classList.add('comments', 'none');
     this.container.classList.add('container', 'container-slider');
     this.containerArrows.classList.add('container-arrows');

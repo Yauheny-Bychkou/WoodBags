@@ -23,6 +23,11 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-product {
+  max-width: 1215px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 .container-galery {
   max-width: 1170px;
   margin: 0 auto;

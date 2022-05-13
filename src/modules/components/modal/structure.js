@@ -11,7 +11,13 @@ export const structureModal = {
   embroidery: {
     title: 'Вышивка',
     products: [
-      { image: 'embroidery.jpg', name: 'Аня', price: 'Скинь Фотки', id: 'embroidery-1', type: 'embroideryProducts' },
+      {
+        image: 'Вышивка/Фрида/frida-1.jpg',
+        name: 'Фрида',
+        price: '370 BYN',
+        id: 'embroidery-1',
+        type: 'embroideryProducts',
+      },
       { image: 'embroidery.jpg', name: 'Аня', price: 'Скинь Фотки', id: 'embroidery-2', type: 'embroideryProducts' },
       { image: 'embroidery.jpg', name: 'Аня', price: 'Скинь Фотки', id: 'embroidery-3', type: 'embroideryProducts' },
       { image: 'embroidery.jpg', name: 'Аня', price: 'Скинь Фотки', id: 'embroidery-4', type: 'embroideryProducts' },
@@ -22,17 +28,6 @@ export const structureModal = {
       { image: 'embroidery.jpg', name: 'Аня', price: 'Скинь Фотки', id: 'embroidery-9', type: 'embroideryProducts' },
     ],
   },
-  embroideryProducts: [
-    { id: 'embroidery-1', price: '', material: '' },
-    { id: 'embroidery-2', price: '', material: '' },
-    { id: 'embroidery-3', price: '', material: '' },
-    { id: 'embroidery-4', price: '', material: '' },
-    { id: 'embroidery-5', price: '', material: '' },
-    { id: 'embroidery-6', price: '', material: '' },
-    { id: 'embroidery-7', price: '', material: '' },
-    { id: 'embroidery-8', price: '', material: '' },
-    { id: 'embroidery-9', price: '', material: '' },
-  ],
   frame: {
     title: 'Рамка',
     products: [

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
 }
-.wrapper-slide {
+.wrapper-slide-comment {
   position: relative;
   width: 360px;
   height: 327px;
@@ -15,7 +15,7 @@
   height: 100%;
   object-fit: cover;
 }
-.slider-button {
+.slider-button-comment {
   width: 30px;
   height: 30px;
   background-color: transparent;
@@ -29,19 +29,19 @@
   right: 0;
 }
 @media (max-width: 1300px) {
-  .wrapper-slide {
+  .wrapper-slide-comment {
     width: 350px;
     height: 320px;
   }
 }
 @media (max-width: 1200px) {
-  .wrapper-slide {
+  .wrapper-slide-comment {
     width: 316px;
     height: 300px;
   }
 }
 @media (max-width: 400px) {
-  .wrapper-slide {
+  .wrapper-slide-comment {
     width: 280px;
     height: 260px;
   }

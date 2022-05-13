@@ -11,7 +11,7 @@ class Slider {
       const swiperSlide = document.createElement('div');
       const wrapper = document.createElement('div');
       const image = document.createElement('img');
-      wrapper.classList.add('wrapper-slide');
+      wrapper.classList.add('wrapper-slide', 'wrapper-slide-comment');
       image.classList.add('image-slide');
       image.setAttribute('alt', 'comment');
       image.setAttribute('src', structureSlider[i]);
