@@ -243,7 +243,7 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    height: 105vh;
+    height: 700px;
   }
   .swiper-wripper-big-prod {
     position: relative;
