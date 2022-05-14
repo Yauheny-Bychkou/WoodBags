@@ -46,7 +46,9 @@ class SmallSlider {
       image.classList.add('image-slide-small-prod');
       image.setAttribute('alt', 'image');
       image.setAttribute('src', arrayImages[i]);
-      wrapper.append(image);
+      image.onload = () => {
+        wrapper.append(image);
+      };
       swiperSlide.append(wrapper);
       this.swiperWrapperSmallImages.append(swiperSlide);
     }
