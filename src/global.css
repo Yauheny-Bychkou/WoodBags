@@ -8,6 +8,9 @@ body {
 .none {
   visibility: hidden;
 }
+.wrapper-hidden {
+  background-color: #fff;
+}
 .overflow-hidden {
   position: relative;
   overflow: hidden;

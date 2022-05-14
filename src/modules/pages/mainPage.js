@@ -18,6 +18,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 class MainPage {
+  wrapper = document.createElement('div');
   menu = new Menu();
   header = new Header();
   greeting = new Greeting();
@@ -143,6 +144,7 @@ class MainPage {
       if (e.target.classList.contains('galery-overlay-forClick')) {
         this.modal.element.classList.add('modal-active');
         this.modal.content.classList.add('modal-content-active');
+        this.wrapper.classList.add('wrapper-hidden');
         document.body.classList.add('overflow-hidden');
         this.modal.addWrapperProducts(e.target.id);
         this.header.element.classList.add('header-overflow');
@@ -163,7 +165,7 @@ class MainPage {
     });
   }
   appendElements() {
-    document.body.append(
+    this.wrapper.append(
       this.header.element,
       this.greeting.element,
       this.about.element,
@@ -175,11 +177,9 @@ class MainPage {
       this.comment.element,
       this.delivery.element,
       this.contacts.element,
-      this.footer.element,
-      this.menu.element,
-      this.modal.element,
-      this.product.element
+      this.footer.element
     );
+    document.body.append(this.wrapper, this.menu.element, this.modal.element, this.product.element);
   }
   showElementsAfterOnLoad() {
     window.onload = () => {
