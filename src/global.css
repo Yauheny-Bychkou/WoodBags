@@ -9,8 +9,8 @@ body {
   visibility: hidden;
 }
 .overflow-hidden {
-  /* touch-action: none; */
-  /* -ms-touch-action: none; */
+  touch-action: none;
+  -ms-touch-action: none;
   /* overflow: hidden; */
   /* position: relative; */
   /* height: 100%; */
