@@ -147,7 +147,7 @@
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
-  height: 700px;
+  height: 80vh;
   padding: 0 30px 30px 30px;
 }
 .product-name {
@@ -192,6 +192,9 @@
   }
 }
 @media (max-width: 1050px) {
+  .wrapper-cards {
+    height: 70vh;
+  }
   .modal-wrapper__item:first-child {
     display: none;
   }
@@ -274,7 +277,7 @@
     align-items: center;
   }
   .wrapper-cards {
-    height: 605px;
+    /* height: 605px; */
   }
   .modal-wrapper-title {
     padding-bottom: 20px;
