@@ -14,7 +14,7 @@ body {
   /* overflow: hidden; */
   /* position: relative; */
   /* height: 100%; */
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
   width: auto;
   margin-right: var(--scrollbar-width);
 }

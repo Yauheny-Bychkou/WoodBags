@@ -280,22 +280,10 @@ class MainPage {
       slidesPerView: 1,
       breakpoints: {
         320: {
-          slidesPerView: 1,
-          spaceBetween: 100,
-        },
-        480: {
-          slidesPerView: 1,
-          spaceBetween: 30,
-        },
-        770: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        992: {
           slidesPerView: 2,
           spaceBetween: 0,
         },
-        1200: {
+        992: {
           slidesPerView: 3,
           spaceBetween: 0,
         },
