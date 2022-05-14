@@ -9,7 +9,8 @@ body {
   visibility: hidden;
 }
 .wrapper-hidden {
-  background-color: #fff;
+  display: none;
+  /* background-color: #fff;di */
 }
 .overflow-hidden {
   position: relative;
