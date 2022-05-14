@@ -130,6 +130,7 @@ class MainPage {
   }
   closeModal() {
     this.header.element.classList.remove('header-overflow');
+    this.wrapper.classList.remove('wrapper-hidden');
     Promise.resolve()
       .then(() => document.body.classList.remove('overflow-hidden'))
       .then(() => {
@@ -215,6 +216,7 @@ class MainPage {
   addEventListenerToAnchorMenu() {
     this.menu.nav.addEventListener('click', (e) => {
       if (e.target.classList.contains('menu-wrapper__link')) {
+        this.wrapper.classList.remove('wrapper-hidden');
         Promise.resolve()
           .then(() => document.body.classList.remove('overflow-hidden'))
           .then(() => {
