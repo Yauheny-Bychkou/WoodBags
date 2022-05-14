@@ -49,14 +49,21 @@ class MainPage {
     this.addActiveClassToHeaderLink();
     this.addEventListenerToModalMainButton();
     this.addEventListenerToWrapperModalContent();
-    this.initSliderProduct();
+    this.addEventListenerToCloseProduct();
   }
   addEventListenerToWrapperModalContent() {
     this.modal.wrapperCards.addEventListener('click', (e) => {
       if (e.target.classList.contains('product-button')) {
-        this.product.showProduct(e.target.dataset.type, e.target.id);
-        this.product.element.classList.add('product-active');
+        Promise.resolve()
+          .then(() => this.product.showProduct(e.target.dataset.type, e.target.id))
+          .then(() => this.initSliderProduct())
+          .then(() => this.product.element.classList.add('product-active'));
       }
+    });
+  }
+  addEventListenerToCloseProduct() {
+    this.product.buttonClose.addEventListener('click', () => {
+      this.product.element.classList.remove('product-active');
     });
   }
   addActiveClassToHeaderLink() {
@@ -282,15 +289,15 @@ class MainPage {
         },
         770: {
           slidesPerView: 1,
-          spaceBetween: 30,
+          spaceBetween: 0,
         },
         992: {
           slidesPerView: 2,
-          spaceBetween: 30,
+          spaceBetween: 0,
         },
         1200: {
           slidesPerView: 3,
-          spaceBetween: 30,
+          spaceBetween: 0,
         },
       },
     });
@@ -314,9 +321,10 @@ class MainPage {
       swiper_1.slideToLoop(index);
       swiper_2.slideToLoop(index);
     };
-
-    swiper_1.on('slideChange', () => swipeAllSliders(swiper_1.realIndex));
-    swiper_2.on('slideChange', () => swipeAllSliders(swiper_2.realIndex));
+    const funcSwiper_1 = () => swipeAllSliders(swiper_1.realIndex);
+    const funcSwiper_2 = () => swipeAllSliders(swiper_2.realIndex);
+    swiper_1.on('slideChange', funcSwiper_1);
+    swiper_2.on('slideChange', funcSwiper_2);
   }
   addEventListenerToBurgerButton() {
     this.header.navMenu.burgerMenu.element.addEventListener('click', (e) => {

@@ -10,8 +10,8 @@ export const structureProduct = {
       images: [
         'Вышивка/Фрида/frida-1.jpg',
         'Вышивка/Фрида/frida-2.jpg',
-        'Вышивка/Фрида/frida-3.jpg',
         'Вышивка/Фрида/frida-4.jpg',
+        'Вышивка/Фрида/frida-3.jpg',
         'Вышивка/Фрида/frida-5.jpg',
       ],
     },

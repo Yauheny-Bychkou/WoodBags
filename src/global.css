@@ -24,7 +24,8 @@ body {
   padding: 0 15px;
 }
 .container-product {
-  max-width: 1215px;
+  position: relative;
+  max-width: 1245px;
   margin: 0 auto;
   padding: 0 15px;
 }

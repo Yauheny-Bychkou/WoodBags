@@ -11,23 +11,16 @@ class SmallSlider {
   sliderSmallImages = document.createElement('div');
   swiperWrapperSmallImages = document.createElement('div');
 
-  constructor() {
+  constructor(arrayImages) {
     this.addClassName();
     this.appendContent();
+    this.changeSlides(arrayImages);
   }
   appendContent() {
-    this.arrowPrev.setAttribute('src', 'arrow-left.svg');
-    this.arrowNext.setAttribute('src', 'arrow-right.svg');
+    this.arrowPrev.setAttribute('src', 'arrow-left-small.svg');
+    this.arrowNext.setAttribute('src', 'arrow-right-small.svg');
     this.swiperButtonPrev.append(this.arrowPrev);
     this.swiperButtonNext.append(this.arrowNext);
-    this.swiperWrapperSmallImages.insertAdjacentHTML(
-      'afterbegin',
-      `
-        <div class="swiper-slide swiper-slide-small">Slide 1</div>
-        <div class="swiper-slide swiper-slide-small">Slide 2</div>
-        <div class="swiper-slide swiper-slide-small">Slide 3</div>   
-    `
-    );
     this.sliderSmallImages.append(this.swiperWrapperSmallImages);
     this.container.append(this.sliderSmallImages);
     this.containerArrows.append(this.container, this.swiperButtonPrev, this.swiperButtonNext);
@@ -39,7 +32,7 @@ class SmallSlider {
     this.swiperButtonPrev.classList.add('slider-product-button-prev', 'button-product-slider');
     this.swiperButtonNext.classList.add('slider-product-button-next', 'button-product-slider');
     this.element.classList.add('product-slider');
-    this.container.classList.add('container-slider-product');
+    this.container.classList.add('container-slider-product-small');
     this.containerArrows.classList.add('container-product-arrows');
   }
   changeSlides(arrayImages) {
