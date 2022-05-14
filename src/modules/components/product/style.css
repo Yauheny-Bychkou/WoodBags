@@ -219,6 +219,9 @@
 .product-close-img-small {
   display: none;
 }
+.arrow-small-screen {
+  display: none;
+}
 @media (max-width: 1245px) {
   .product-sliders {
     margin-right: 80px;
@@ -314,6 +317,12 @@
   }
 }
 @media (max-width: 450px) {
+  .arrow-big-screen {
+    display: none;
+  }
+  .arrow-small-screen {
+    display: initial;
+  }
   .product-close-img-small {
     display: initial;
   }

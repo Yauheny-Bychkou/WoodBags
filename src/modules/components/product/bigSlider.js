@@ -8,6 +8,8 @@ class BigSlider {
   swiperButtonNext = document.createElement('button');
   arrowPrev = document.createElement('img');
   arrowNext = document.createElement('img');
+  arrowPrevSmall = document.createElement('img');
+  arrowNextSmall = document.createElement('img');
   sliderSmallImages = document.createElement('div');
   swiperWrapperSmallImages = document.createElement('div');
 
@@ -19,14 +21,20 @@ class BigSlider {
   appendContent() {
     this.arrowPrev.setAttribute('src', 'arrow-left.svg');
     this.arrowNext.setAttribute('src', 'arrow-right.svg');
-    this.swiperButtonPrev.append(this.arrowPrev);
-    this.swiperButtonNext.append(this.arrowNext);
+    this.arrowPrevSmall.setAttribute('src', 'arrow-left-small.svg');
+    this.arrowNextSmall.setAttribute('src', 'arrow-right-small.svg');
+    this.swiperButtonPrev.append(this.arrowPrev, this.arrowPrevSmall);
+    this.swiperButtonNext.append(this.arrowNext, this.arrowNextSmall);
     this.sliderSmallImages.append(this.swiperWrapperSmallImages);
     this.container.append(this.sliderSmallImages);
     this.containerArrows.append(this.container, this.swiperButtonPrev, this.swiperButtonNext);
     this.element.append(this.containerArrows);
   }
   addClassName() {
+    this.arrowPrev.classList.add('arrow-big-screen');
+    this.arrowNext.classList.add('arrow-big-screen');
+    this.arrowPrevSmall.classList.add('arrow-small-screen');
+    this.arrowNextSmall.classList.add('arrow-small-screen');
     this.sliderSmallImages.classList.add('swiper-2');
     this.swiperWrapperSmallImages.classList.add('swiper-wrapper');
     this.swiperButtonPrev.classList.add('slider-product-button-prev', 'button-product-slider');
