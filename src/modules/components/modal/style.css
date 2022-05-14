@@ -147,7 +147,7 @@
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
-  height: 105vh;
+  height: 125vh;
   padding: 0 30px 30px 30px;
 }
 .product-name {
