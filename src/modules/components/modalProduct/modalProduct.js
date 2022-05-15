@@ -12,6 +12,8 @@ class ModalProduct {
   wrapperTitle = document.createElement('div');
   titleLine = document.createElement('div');
   title = document.createElement('h2');
+  buttonClose = document.createElement('button');
+  imgClose = document.createElement('img');
   constructor() {
     this.form = new Form('contacts');
     this.contactLinks = new ContactLinks('contacts');
@@ -25,15 +27,19 @@ class ModalProduct {
   }
   addContent() {
     this.title.innerHTML = 'Как с нами связаться?';
+    this.imgClose.setAttribute('src', 'close-small.svg');
+    this.imgClose.setAttribute('alt', 'close');
   }
   appendWrappers() {
     this.wrapperRight.append(this.form.element);
     this.wrapperTitle.append(this.titleLine, this.title);
     this.wrapperContent.append(this.contactLinks.wrapper, this.wrapperRight);
-    this.modalDialog.append(this.wrapperTitle, this.wrapperContent);
+    this.buttonClose.append(this.imgClose);
+    this.modalDialog.append(this.wrapperTitle, this.wrapperContent, this.buttonClose);
     this.element.append(this.overlay, this.modalDialog);
   }
   addClassName() {
+    this.buttonClose.classList.add('modal-wrapper-buttonClose');
     this.wrapperTitle.classList.add('modal-wrrapper-title');
     this.title.classList.add('modal-product-title');
     this.titleLine.classList.add('modal-title-line');

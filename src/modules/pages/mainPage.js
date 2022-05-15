@@ -55,6 +55,13 @@ class MainPage {
     this.addEventListenerToWrapperModalContent();
     this.addEventListenerToCloseProduct();
     this.addEventListenerToButtonProductOrder();
+    this.addEventListenerToCloseProductOrder();
+  }
+  addEventListenerToCloseProductOrder() {
+    this.modalProduct.buttonClose.addEventListener('click', (e) => {
+      this.modalProduct.overlay.classList.remove('modal-product-overlay--visible');
+      this.modalProduct.modalDialog.classList.remove('modal-product-dialog--visible');
+    });
   }
   addEventListenerToButtonProductOrder() {
     this.product.aboutProduct.button.addEventListener('click', (e) => {
