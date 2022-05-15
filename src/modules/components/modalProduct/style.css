@@ -68,7 +68,7 @@
 .modal-wrapper-buttonClose {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 3px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -86,7 +86,7 @@
     padding: 0;
   }
   .modal-product-dialog {
-    padding: 15px 15px;
+    padding: 35px 15px 15px 15px;
   }
   .modal-product-wrapper-content {
     width: 720px;
