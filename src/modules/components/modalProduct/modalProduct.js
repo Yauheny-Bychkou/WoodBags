@@ -14,6 +14,11 @@ class ModalProduct {
   title = document.createElement('h2');
   constructor() {
     this.form = new Form('contacts');
+    this.contactLinks = new ContactLinks('contacts');
+    this.form.inputName.classList.add('modal-prod-inputName');
+    this.form.textArea.classList.add('modal-prod-area');
+    this.form.button.classList.add('modal-prod-button');
+
     this.addContent();
     this.addClassName();
     this.appendWrappers();
@@ -24,7 +29,7 @@ class ModalProduct {
   appendWrappers() {
     this.wrapperRight.append(this.form.element);
     this.wrapperTitle.append(this.titleLine, this.title);
-    this.wrapperContent.append(new ContactLinks('contacts').wrapper, this.wrapperRight);
+    this.wrapperContent.append(this.contactLinks.wrapper, this.wrapperRight);
     this.modalDialog.append(this.wrapperTitle, this.wrapperContent);
     this.element.append(this.overlay, this.modalDialog);
   }
