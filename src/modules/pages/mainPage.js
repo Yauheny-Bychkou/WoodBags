@@ -12,6 +12,7 @@ import Delivery from '../components/delivery/delivery';
 import Collage from '../components/collage/collage';
 import Modal from '../components/modal/modal';
 import Product from '../components/product/product';
+import ModalProduct from '../components/modalProduct/modalProduct';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -34,6 +35,8 @@ class MainPage {
   collage = new Collage();
   modal = new Modal();
   product = new Product();
+  modalProduct = new ModalProduct();
+
   constructor() {
     this.appendElements();
     this.showElementsAfterOnLoad();
@@ -51,6 +54,13 @@ class MainPage {
     this.addEventListenerToModalMainButton();
     this.addEventListenerToWrapperModalContent();
     this.addEventListenerToCloseProduct();
+    this.addEventListenerToButtonProductOrder();
+  }
+  addEventListenerToButtonProductOrder() {
+    this.product.aboutProduct.button.addEventListener('click', (e) => {
+      this.modalProduct.overlay.classList.add('modal-product-overlay--visible');
+      this.modalProduct.modalDialog.classList.add('modal-product-dialog--visible');
+    });
   }
   addEventListenerToWrapperModalContent() {
     this.modal.wrapperCards.addEventListener('click', (e) => {
@@ -180,7 +190,13 @@ class MainPage {
       this.contacts.element,
       this.footer.element
     );
-    document.body.append(this.wrapper, this.menu.element, this.modal.element, this.product.element);
+    document.body.append(
+      this.wrapper,
+      this.menu.element,
+      this.modal.element,
+      this.product.element,
+      this.modalProduct.element
+    );
   }
   showElementsAfterOnLoad() {
     window.onload = () => {
