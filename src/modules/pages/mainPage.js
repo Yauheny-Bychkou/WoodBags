@@ -68,7 +68,7 @@ class MainPage {
       });
       // const req = fetch('./send.php');
       const postData = (body) => {
-        return fetch('./server.php', {
+        return fetch('./send.php', {
           method: 'POST',
           headers: {
             'Content-type': 'application/json',
