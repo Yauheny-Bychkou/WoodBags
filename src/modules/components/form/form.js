@@ -21,6 +21,7 @@ class Form {
   }
   addContent() {
     this.element.setAttribute('action', 'send.php');
+    this.element.setAttribute('method', 'POST');
     this.inputName.setAttribute('name', 'name');
     this.inputPhone.setAttribute('name', 'phone');
     this.textArea.setAttribute('name', 'message');
