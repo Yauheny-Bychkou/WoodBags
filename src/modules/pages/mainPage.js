@@ -60,23 +60,23 @@ class MainPage {
   }
   addEventListenerToFormMainPage() {
     this.contacts.form.element.addEventListener('submit', (e) => {
-      // e.preventDefault();
-      // let formData = new FormData(this.contacts.form.element);
-      // let body = {};
-      // formData.forEach((val, key) => {
-      //   body[key] = val;
-      // });
-      // let xhr = new XMLHttpRequest();
-      // xhr.onreadystatechange = () => {
-      //   if (xhr.readyState === 4) {
-      //     if (xhr.status === 200) {
-      //       console.log('Отправлено');
-      //     }
-      //   }
-      // };
-      // xhr.open('POST', './send.php', true);
-      // xhr.setRequestHeader('Content-type', 'application/json');
-      // xhr.send(JSON.stringify(formData));
+      e.preventDefault();
+      let formData = new FormData(this.contacts.form.element);
+      let body = {};
+      formData.forEach((val, key) => {
+        body[key] = val;
+      });
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Отправлено');
+          }
+        }
+      };
+      xhr.open('POST', './send.php', true);
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.send(JSON.stringify(formData));
       this.contacts.form.element.reset();
     });
   }
