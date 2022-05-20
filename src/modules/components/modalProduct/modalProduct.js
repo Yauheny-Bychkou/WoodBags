@@ -18,6 +18,7 @@ class ModalProduct {
     this.form = new Form('contacts');
     this.contactLinks = new ContactLinks('contacts');
     this.form.inputName.classList.add('modal-prod-inputName');
+    this.form.inputPhone.classList.add('modal-prod-inputName');
     this.form.textArea.classList.add('modal-prod-area');
     this.form.button.classList.add('modal-prod-button');
 

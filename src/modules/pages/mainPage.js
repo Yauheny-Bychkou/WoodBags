@@ -56,6 +56,46 @@ class MainPage {
     this.addEventListenerToCloseProduct();
     this.addEventListenerToButtonProductOrder();
     this.addEventListenerToCloseProductOrder();
+    this.addEventListenerToFormMainPage();
+  }
+  addEventListenerToFormMainPage() {
+    this.contacts.form.element.addEventListener('submit', (e) => {
+      e.preventDefault();
+      var formData = new FormData(this.contacts.form.element);
+      let body = {};
+      formData.forEach((val, key) => {
+        body[key] = val;
+      });
+      const postData = (body) => {
+        return fetch('./server.php', {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        });
+      };
+      postData(body)
+        .then((response) => {
+          if (response.status !== 200) {
+            throw new Error('status netwokr not 200');
+          }
+          // stususMessage.textContent = successMesage;
+          // setTimeout(() => (stususMessage.textContent = ''), 5000);
+          // loaddMessage.remove();
+          // input.forEach((input) => {
+          //   input.value = '';
+          // });
+        })
+        .catch((error) => {
+          // stususMessage.textContent = errorMessage;
+          // console.error(error);
+          // setTimeout(() => {
+          //   loaddMessage.remove();
+          //   stususMessage.textContent = '';
+          // }, 5000);
+        });
+    });
   }
   addEventListenerToCloseProductOrder() {
     this.modalProduct.buttonClose.addEventListener('click', (e) => {
