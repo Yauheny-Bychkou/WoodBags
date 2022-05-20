@@ -73,10 +73,10 @@ class MainPage {
             console.log('Отправлено');
           }
         }
-        xhr.open('POST', 'send.php', true);
-        xhr.send(formData);
-        this.contacts.form.element.reset();
       };
+      xhr.open('POST', 'send.php', true);
+      xhr.send(formData);
+      this.contacts.form.element.reset();
     });
   }
   addEventListenerToCloseProductOrder() {
