@@ -66,6 +66,7 @@ class MainPage {
       formData.forEach((val, key) => {
         body[key] = val;
       });
+      // const req = fetch('./send.php');
       const postData = (body) => {
         return fetch('./server.php', {
           method: 'POST',
@@ -75,26 +76,43 @@ class MainPage {
           body: JSON.stringify(body),
         });
       };
-      postData(body)
-        .then((response) => {
-          if (response.status !== 200) {
-            throw new Error('status netwokr not 200');
-          }
-          // stususMessage.textContent = successMesage;
-          // setTimeout(() => (stususMessage.textContent = ''), 5000);
-          // loaddMessage.remove();
-          // input.forEach((input) => {
-          //   input.value = '';
-          // });
-        })
-        .catch((error) => {
-          // stususMessage.textContent = errorMessage;
-          // console.error(error);
-          // setTimeout(() => {
-          //   loaddMessage.remove();
-          //   stususMessage.textContent = '';
-          // }, 5000);
-        });
+      postData(body).then((response) => {
+        console.log(response.status);
+      });
+      // console.log(body);
+      // const postData = (body) => {
+      //   return fetch('./send.json', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-type': 'application/json',
+      //     },
+      //     body: JSON.stringify(body),
+      //   });
+      // };
+      // postData(body)
+      //   .then((response) => {
+      //     console.log(response.status);
+      //     // if (response.status !== 200) {
+      //     //   console.log('no connect');
+      //     //   // throw new Error('status netwokr not 200');
+      //     // }
+      //     // console.log('connect');
+      //     // stususMessage.textContent = successMesage;
+      //     // setTimeout(() => (stususMessage.textContent = ''), 5000);
+      //     // loaddMessage.remove();
+      //     // input.forEach((input) => {
+      //     //   input.value = '';
+      //     // });
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //     // stususMessage.textContent = errorMessage;
+      //     // console.error(error);
+      //     // setTimeout(() => {
+      //     //   loaddMessage.remove();
+      //     //   stususMessage.textContent = '';
+      //     // }, 5000);
+      //   });
     });
   }
   addEventListenerToCloseProductOrder() {
