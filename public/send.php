@@ -65,4 +65,4 @@ $mail->send();
 }
 
 // Отображение результата
-// header('Location: thankyou.html');
+header('Location: thankyou.html');
