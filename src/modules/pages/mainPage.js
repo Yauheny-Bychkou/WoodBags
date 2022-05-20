@@ -60,7 +60,7 @@ class MainPage {
   }
   addEventListenerToFormMainPage() {
     this.contacts.form.element.addEventListener('submit', (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       let formData = new FormData(this.contacts.form.element);
       // let body = {};
       // formData.forEach((val, key) => {
