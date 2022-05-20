@@ -66,17 +66,19 @@ class MainPage {
       formData.forEach((val, key) => {
         body[key] = val;
       });
-      let xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            console.log('Отправлено');
-          }
-        }
+      const postData = (body) => {
+        // return fetch('./send.php');
+        return fetch('./send.php', {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        });
       };
-      xhr.open('POST', './send.php', true);
-      xhr.setRequestHeader('Content-type', 'application/json');
-      xhr.send(JSON.stringify(formData));
+      postData(body).then((res) => {
+        console.log(res.status);
+      });
       this.contacts.form.element.reset();
     });
   }
