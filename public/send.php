@@ -12,7 +12,7 @@ $message = $_POST['message'];
 // Формирование самого письма
 
   if (!empty($_POST['name']) && !empty($_POST['phone']) && !empty($_POST['message'])) {
-    $title = "Новые обращение Best Tour Plan";
+    $title = "Новый запрос Woodbag.s";
     $body = "
     <h2>Новое обращение</h2>
     <b>Name:</b> $name<br>
@@ -40,7 +40,7 @@ try {
     // Настройки вашей почты
     $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
     $mail->Username   = '375445433672ab@gmail.com'; // Логин на почте
-    $mail->Password   = 'uoxllhdjzwujaemx'; // Пароль на почте
+    $mail->Password   = 'tsyutouuoaksnyvx'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
     $mail->setFrom('375445433672ab@gmail.com', 'Yauheni Bychkou'); // Адрес самой почты и имя отправителя
@@ -65,4 +65,4 @@ $mail->send();
 }
 
 // Отображение результата
-header('Location: thankyou.html');
+// header('Location: thankyou.html');

@@ -13,6 +13,7 @@ import Collage from '../components/collage/collage';
 import Modal from '../components/modal/modal';
 import Product from '../components/product/product';
 import ModalProduct from '../components/modalProduct/modalProduct';
+import ModalForm from '../components/modalForm/modalForm';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -36,6 +37,7 @@ class MainPage {
   modal = new Modal();
   product = new Product();
   modalProduct = new ModalProduct();
+  modalForm = new ModalForm();
 
   constructor() {
     this.appendElements();
@@ -57,28 +59,40 @@ class MainPage {
     this.addEventListenerToButtonProductOrder();
     this.addEventListenerToCloseProductOrder();
     this.addEventListenerToFormMainPage();
+    this.addEventListenerToCloseModalForm();
+  }
+  addEventListenerToCloseModalForm() {
+    this.modalForm.buttonClose.addEventListener('click', () => {
+      this.modalForm.overlay.classList.remove('modal-form-overlay--visible');
+      this.modalForm.content.classList.remove('modal-form-content--visible');
+      document.body.classList.remove('overflow-hidden');
+      this.header.element.classList.remove('header-modal-active');
+    });
   }
   addEventListenerToFormMainPage() {
     this.contacts.form.element.addEventListener('submit', (e) => {
       e.preventDefault();
       let formData = new FormData(this.contacts.form.element);
-      let body = {};
-      formData.forEach((val, key) => {
-        body[key] = val;
-      });
-      const postData = (body) => {
-        // return fetch('./send.php');
-        return fetch('./send.php', {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        });
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            document.body.classList.add('overflow-hidden');
+            this.header.element.classList.add('header-modal-active');
+            this.modalForm.overlay.classList.add('modal-form-overlay--visible');
+            this.modalForm.content.classList.add('modal-form-content--visible');
+            this.modalForm.addTextMessage('success');
+          } else {
+            document.body.classList.add('overflow-hidden');
+            this.header.element.classList.add('header-modal-active');
+            this.modalForm.overlay.classList.add('modal-form-overlay--visible');
+            this.modalForm.content.classList.add('modal-form-content--visible');
+            this.modalForm.addTextMessage('error');
+          }
+        }
       };
-      postData(body).then((res) => {
-        console.log(res.status);
-      });
+      xhr.open('POST', './send.php', true);
+      xhr.send(formData);
       this.contacts.form.element.reset();
     });
   }
@@ -227,7 +241,8 @@ class MainPage {
       this.menu.element,
       this.modal.element,
       this.product.element,
-      this.modalProduct.element
+      this.modalProduct.element,
+      this.modalForm.element
     );
   }
   showElementsAfterOnLoad() {
