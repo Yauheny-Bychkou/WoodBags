@@ -46,7 +46,6 @@ class About {
     this.container.append(this.aboutWrapper);
     this.aboutWrapperImage.onload = () => {
       this.aboutWrapperImg.append(this.aboutWrapperImage);
-      this.aboutWrapperImage.setAttribute('loading', 'lazy');
     };
     this.element.append(new Title(structureAbout.title).element, this.container);
   }

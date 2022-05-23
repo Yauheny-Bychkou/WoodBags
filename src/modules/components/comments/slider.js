@@ -16,7 +16,7 @@ class Slider {
       image.setAttribute('alt', 'comment');
       image.setAttribute('src', structureSlider[i]);
       swiperSlide.classList.add('swiper-slide', 'img-slide');
-      wrapper.append(image);
+      image.onload = () => wrapper.append(image);
       swiperSlide.append(wrapper);
       this.swiperWrapper.append(swiperSlide);
     }
