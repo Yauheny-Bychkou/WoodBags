@@ -60,6 +60,7 @@ class MainPage {
     this.addEventListenerToCloseProductOrder();
     this.addEventListenerToFormMainPage();
     this.addEventListenerToCloseModalForm();
+    this.addEventListenerToFormProductPage();
   }
   addEventListenerToCloseModalForm() {
     this.modalForm.buttonClose.addEventListener('click', () => {
@@ -69,32 +70,114 @@ class MainPage {
       this.header.element.classList.remove('header-modal-active');
     });
   }
+  addEventListenerToFormProductPage() {
+    this.modalProduct.form.element.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let formData = new FormData(this.modalProduct.form.element);
+      let xhr = new XMLHttpRequest();
+      this.checkInputName(this.modalProduct.form.inputName, this.modalProduct.form.errorInputName);
+      this.checkInputPhone(this.modalProduct.form.inputPhone, this.modalProduct.form.errorInputPhone);
+      this.checkTextArea(this.modalProduct.form.textArea, this.modalProduct.form.errorArea);
+      if (
+        this.checkInputName(this.modalProduct.form.inputName, this.modalProduct.form.errorInputName) === true &&
+        this.checkInputPhone(this.modalProduct.form.inputPhone, this.modalProduct.form.errorInputPhone) === true &&
+        this.checkTextArea(this.modalProduct.form.textArea, this.modalProduct.form.errorArea)
+      ) {
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              document.body.classList.add('overflow-hidden');
+              this.header.element.classList.add('header-modal-active');
+              this.modalForm.overlay.classList.add('modal-form-overlay--visible');
+              this.modalForm.content.classList.add('modal-form-content--visible');
+              this.modalForm.addTextMessage('success');
+              this.modalProduct.form.inputName.value = '';
+              this.modalProduct.form.inputPhone.value = '';
+              this.contacts.form.textArea.value = 'Здравствуйте! Хочу заказать сумку...';
+            } else {
+              document.body.classList.add('overflow-hidden');
+              this.header.element.classList.add('header-modal-active');
+              this.modalForm.overlay.classList.add('modal-form-overlay--visible');
+              this.modalForm.content.classList.add('modal-form-content--visible');
+              this.modalForm.addTextMessage('error');
+            }
+          }
+        };
+        xhr.open('POST', './send.php', true);
+        xhr.send(formData);
+      }
+    });
+  }
   addEventListenerToFormMainPage() {
     this.contacts.form.element.addEventListener('submit', (e) => {
       e.preventDefault();
       let formData = new FormData(this.contacts.form.element);
       let xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            document.body.classList.add('overflow-hidden');
-            this.header.element.classList.add('header-modal-active');
-            this.modalForm.overlay.classList.add('modal-form-overlay--visible');
-            this.modalForm.content.classList.add('modal-form-content--visible');
-            this.modalForm.addTextMessage('success');
-          } else {
-            document.body.classList.add('overflow-hidden');
-            this.header.element.classList.add('header-modal-active');
-            this.modalForm.overlay.classList.add('modal-form-overlay--visible');
-            this.modalForm.content.classList.add('modal-form-content--visible');
-            this.modalForm.addTextMessage('error');
+      this.checkInputName(this.contacts.form.inputName, this.contacts.form.errorInputName);
+      this.checkInputPhone(this.contacts.form.inputPhone, this.contacts.form.errorInputPhone);
+      this.checkTextArea(this.contacts.form.textArea, this.contacts.form.errorArea);
+      if (
+        this.checkInputName(this.contacts.form.inputName, this.contacts.form.errorInputName) === true &&
+        this.checkInputPhone(this.contacts.form.inputPhone, this.contacts.form.errorInputPhone) === true &&
+        this.checkTextArea(this.contacts.form.textArea, this.contacts.form.errorArea)
+      ) {
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              document.body.classList.add('overflow-hidden');
+              this.header.element.classList.add('header-modal-active');
+              this.modalForm.overlay.classList.add('modal-form-overlay--visible');
+              this.modalForm.content.classList.add('modal-form-content--visible');
+              this.modalForm.addTextMessage('success');
+              this.contacts.form.inputName.value = '';
+              this.contacts.form.inputPhone.value = '';
+              this.contacts.form.textArea.value = 'Здравствуйте! Хочу заказать сумку...';
+            } else {
+              document.body.classList.add('overflow-hidden');
+              this.header.element.classList.add('header-modal-active');
+              this.modalForm.overlay.classList.add('modal-form-overlay--visible');
+              this.modalForm.content.classList.add('modal-form-content--visible');
+              this.modalForm.addTextMessage('error');
+            }
           }
-        }
-      };
-      xhr.open('POST', './send.php', true);
-      xhr.send(formData);
-      this.contacts.form.element.reset();
+        };
+        xhr.open('POST', './send.php', true);
+        xhr.send(formData);
+      }
     });
+  }
+  checkInputName(input, error) {
+    if (input.value.length < 3 || input.value.match(/[\d/@-_.~!*'"№#$%^:+]/g)) {
+      input.classList.add('contacts-input-error');
+      error.classList.remove('none');
+      return false;
+    } else {
+      input.classList.remove('contacts-input-error');
+      error.classList.add('none');
+      return true;
+    }
+  }
+  checkInputPhone(input, error) {
+    if (input.value.length < 8 || input.value.match(/[^0-9 + ()-]/gi)) {
+      input.classList.add('contacts-input-error');
+      error.classList.remove('none');
+      return false;
+    } else {
+      input.classList.remove('contacts-input-error');
+      error.classList.add('none');
+      return true;
+    }
+  }
+  checkTextArea(area, error) {
+    if (area.value.length < 8) {
+      area.classList.add('contacts-area-error');
+      error.classList.remove('none');
+      return false;
+    } else {
+      area.classList.remove('contacts-area-error');
+      error.classList.add('none');
+      return true;
+    }
   }
   addEventListenerToCloseProductOrder() {
     this.modalProduct.buttonClose.addEventListener('click', (e) => {
@@ -303,7 +386,7 @@ class MainPage {
     const swiper = new Swiper('.swiper', {
       modules: [Navigation, Pagination],
       direction: 'horizontal',
-      loop: true,
+      loop: false,
       navigation: {
         nextEl: '.slider-button-next',
         prevEl: '.slider-button-prev',
@@ -336,13 +419,6 @@ class MainPage {
   initSliderProduct() {
     const swiper_1 = new Swiper('.swiper-1', {
       modules: [Navigation, Pagination],
-      direction: 'horizontal',
-      loop: true,
-      navigation: {
-        nextEl: '.slider-product-button-next',
-        prevEl: '.slider-product-button-prev',
-      },
-      slidesPerView: 1,
       breakpoints: {
         320: {
           slidesPerView: 2,
@@ -353,29 +429,34 @@ class MainPage {
           spaceBetween: 0,
         },
       },
+      loop: false,
+      navigation: {
+        nextEl: '.slider-product-button-next-big',
+        prevEl: '.slider-product-button-prev-big',
+        disabledClass: 'button-disabled-big',
+      },
     });
     const swiper_2 = new Swiper('.swiper-2', {
       modules: [Navigation, Pagination],
-      direction: 'horizontal',
-      loop: true,
-      navigation: {
-        nextEl: '.slider-product-button-next',
-        prevEl: '.slider-product-button-prev',
-      },
-      slidesPerView: 1,
       breakpoints: {
         320: {
           slidesPerView: 1,
           spaceBetween: 100,
         },
       },
+      loop: false,
+      navigation: {
+        nextEl: '.slider-product-button-next',
+        prevEl: '.slider-product-button-prev',
+        disabledClass: 'button-disabled',
+      },
     });
     const swipeAllSliders = (index) => {
-      swiper_1.slideToLoop(index);
-      swiper_2.slideToLoop(index);
+      swiper_1.slideTo(index);
+      swiper_2.slideTo(index);
     };
-    const funcSwiper_1 = () => swipeAllSliders(swiper_1.realIndex);
-    const funcSwiper_2 = () => swipeAllSliders(swiper_2.realIndex);
+    const funcSwiper_1 = () => swipeAllSliders(swiper_1.activeIndex);
+    const funcSwiper_2 = () => swipeAllSliders(swiper_2.activeIndex);
     swiper_1.on('slideChange', funcSwiper_1);
     swiper_2.on('slideChange', funcSwiper_2);
   }

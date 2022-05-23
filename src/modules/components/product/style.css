@@ -85,6 +85,12 @@
   border: none;
   cursor: pointer;
 }
+.button-product-slider-big {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .product-content {
   padding-top: 100px;
 }

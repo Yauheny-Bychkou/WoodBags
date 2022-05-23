@@ -5,7 +5,13 @@ body {
   padding: 0;
   margin: 0;
 }
-.none {
+/* .none {
+  visibility: hidden;
+} */
+.button-disabled {
+  visibility: hidden;
+}
+.button-disabled-big {
   visibility: hidden;
 }
 .wrapper-hidden {

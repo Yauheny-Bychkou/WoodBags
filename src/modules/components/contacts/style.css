@@ -12,30 +12,55 @@
   width: 500px;
 }
 .contacts-inputs {
+  position: relative;
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .contacts-input {
   width: 240px;
-  margin-right: 20px;
   padding: 23px 10px 23px 10px;
   font-size: 16px;
   line-height: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  border: 1px solid #000;
+  outline: none;
 }
-.contacts-input:last-child {
+.contacts-input-error {
+  border: 1px solid red;
+}
+.contacts-wrapper-input {
+  position: relative;
+  margin-right: 20px;
+}
+.contacts-wrapper-error {
+  margin: 0;
+  color: red;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+.contacts-wrapper-area {
+  position: relative;
+  width: 100%;
+}
+.contacts-wrapper-input:last-child {
   margin-right: 0;
 }
 .contacts-area {
   width: 100%;
   height: 231px;
   padding: 23px 10px 23px 10px;
-  margin-bottom: 20px;
   font-size: 16px;
   line-height: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  border: 1px solid #000;
+  outline: none;
+}
+.contacts-area-error {
+  border: 1px solid red;
 }
 .contacts-text-tel {
   margin: 0;
@@ -83,17 +108,13 @@
   line-height: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  margin-top: 10px;
   cursor: pointer;
 }
-@media (max-width: 850px) {
-  .contacts-wrapper-links {
-    margin-bottom: 13px;
-  }
-}
-@media (max-width: 770px) {
+@media (max-width: 993px) {
   .contacts-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .contacts-wrapper-left {
@@ -103,6 +124,12 @@
     align-items: center;
   }
 }
+@media (max-width: 850px) {
+  .contacts-wrapper-links {
+    margin-bottom: 13px;
+  }
+}
+
 @media (max-width: 650px) {
   .contacts-text-tel {
     font-size: 12px;
@@ -129,12 +156,17 @@
   .contacts-content {
     align-items: center;
   }
-  .contacts-input {
-    width: 100%;
+  .contacts-wrapper-input {
     margin-right: 0;
     margin-bottom: 10px;
+    width: 100%;
   }
-  .contacts-input:last-child {
+  .contacts-input {
+    width: 100%;
+    /* margin-right: 0; */
+    /* margin-bottom: 10px; */
+  }
+  .contacts-wrapper-input:last-child {
     margin-bottom: 0;
   }
   .contacts-inputs {

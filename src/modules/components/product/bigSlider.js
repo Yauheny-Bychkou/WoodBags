@@ -37,8 +37,8 @@ class BigSlider {
     this.arrowNextSmall.classList.add('arrow-small-screen');
     this.sliderSmallImages.classList.add('swiper-2');
     this.swiperWrapperSmallImages.classList.add('swiper-wrapper');
-    this.swiperButtonPrev.classList.add('slider-product-button-prev', 'button-product-slider');
-    this.swiperButtonNext.classList.add('slider-product-button-next', 'button-product-slider');
+    this.swiperButtonPrev.classList.add('slider-product-button-prev', 'button-product-slider-big');
+    this.swiperButtonNext.classList.add('slider-product-button-next', 'button-product-slider-big');
     this.element.classList.add('product-slider');
     this.container.classList.add('container-slider-product', 'container-slider-product-big');
     this.containerArrows.classList.add('container-product-arrows');
