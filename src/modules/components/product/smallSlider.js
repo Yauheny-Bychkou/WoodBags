@@ -52,21 +52,21 @@ class SmallSlider {
       swiperSlide.append(wrapper);
       this.swiperWrapperSmallImages.append(swiperSlide);
     }
-    for (let i = 0; i < 2; i++) {
-      const swiperSlide = document.createElement('div');
-      const wrapper = document.createElement('div');
-      const image = document.createElement('img');
-      swiperSlide.classList.add('swiper-slide', 'swiper-slide-small');
-      wrapper.classList.add('swiper-wripper-small-prod', 'img-slide-small-prod');
-      image.classList.add('image-slide-small-prod');
-      image.setAttribute('alt', 'image');
-      image.setAttribute('src', arrayImages[i]);
-      image.onload = () => {
-        wrapper.append(image);
-      };
-      swiperSlide.append(wrapper);
-      this.swiperWrapperSmallImages.append(swiperSlide);
-    }
+    // for (let i = 0; i < 2; i++) {
+    //   const swiperSlide = document.createElement('div');
+    //   const wrapper = document.createElement('div');
+    //   const image = document.createElement('img');
+    //   swiperSlide.classList.add('swiper-slide', 'swiper-slide-small');
+    //   wrapper.classList.add('swiper-wripper-small-prod', 'img-slide-small-prod');
+    //   image.classList.add('image-slide-small-prod');
+    //   image.setAttribute('alt', 'image');
+    //   image.setAttribute('src', arrayImages[i]);
+    //   image.onload = () => {
+    //     wrapper.append(image);
+    //   };
+    //   swiperSlide.append(wrapper);
+    //   this.swiperWrapperSmallImages.append(swiperSlide);
+    // }
   }
 }
 export default SmallSlider;

@@ -14,7 +14,7 @@ import Modal from '../components/modal/modal';
 import Product from '../components/product/product';
 import ModalProduct from '../components/modalProduct/modalProduct';
 import ModalForm from '../components/modalForm/modalForm';
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Parallax, EffectFade, Autoplay, Thumbs } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -415,7 +415,7 @@ class MainPage {
   }
   initSliderProduct() {
     const swiper_1 = new Swiper('.swiper-1', {
-      modules: [Navigation, Pagination],
+      // modules: [Navigation, Pagination],
       breakpoints: {
         320: {
           slidesPerView: 2,
@@ -426,15 +426,22 @@ class MainPage {
           spaceBetween: 0,
         },
       },
+      slideToClickedSlide: true,
+      longSwipesRatio: 0.1,
+      parallax: true,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      freeMode: true,
       loop: false,
-      navigation: {
-        nextEl: '.slider-product-button-next-big',
-        prevEl: '.slider-product-button-prev-big',
-        disabledClass: 'button-disabled-big',
-      },
+      rewind: false,
+      // navigation: {
+      //   nextEl: '.slider-product-button-next-big',
+      //   prevEl: '.slider-product-button-prev-big',
+      //   disabledClass: 'button-disabled-big',
+      // },
     });
     const swiper_2 = new Swiper('.swiper-2', {
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Thumbs, EffectFade],
       breakpoints: {
         320: {
           slidesPerView: 1,
@@ -447,15 +454,23 @@ class MainPage {
         prevEl: '.slider-product-button-prev',
         disabledClass: 'button-disabled',
       },
+      // effect: 'fade',
+      // fadeEffect: {
+      //   crossFade: true,
+      // },
+      rewind: false,
+      thumbs: {
+        swiper: swiper_1,
+      },
     });
-    const swipeAllSliders = (index) => {
-      swiper_1.slideTo(index);
-      swiper_2.slideTo(index);
-    };
-    const funcSwiper_1 = () => swipeAllSliders(swiper_1.activeIndex);
-    const funcSwiper_2 = () => swipeAllSliders(swiper_2.activeIndex);
-    swiper_1.on('slideChange', funcSwiper_1);
-    swiper_2.on('slideChange', funcSwiper_2);
+    // const swipeAllSliders = (index) => {
+    //   swiper_1.slideTo(index);
+    //   swiper_2.slideTo(index);
+    // };
+    // const funcSwiper_1 = () => swipeAllSliders(swiper_1.activeIndex);
+    // const funcSwiper_2 = () => swipeAllSliders(swiper_2.activeIndex);
+    // swiper_1.on('slideChange', funcSwiper_1);
+    // swiper_2.on('slideChange', funcSwiper_2);
   }
   addEventListenerToBurgerButton() {
     this.header.navMenu.burgerMenu.element.addEventListener('click', (e) => {

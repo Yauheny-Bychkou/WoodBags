@@ -61,7 +61,7 @@
 .container-slider-product-big {
   height: 630px;
 }
-.swiper-1 .swiper-slide-active img {
+.swiper-1 .swiper-slide-thumb-active img {
   border: 5px solid red;
 }
 
