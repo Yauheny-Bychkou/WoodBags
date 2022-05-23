@@ -193,9 +193,9 @@ class MainPage {
   }
   addEventListenerToWrapperModalContent() {
     this.modal.wrapperCards.addEventListener('click', (e) => {
-      if (e.target.classList.contains('product-button')) {
+      if (e.target.classList.contains('product-button') || e.target.classList.contains('wrapper-card-img')) {
         Promise.resolve()
-          .then(() => this.product.showProduct(e.target.dataset.type, e.target.id))
+          .then(() => this.product.showProduct(e.target.dataset.type, e.target.dataset.id))
           .then(() => this.initSliderProduct())
           .then(() => this.product.element.classList.add('product-active'));
       }

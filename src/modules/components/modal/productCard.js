@@ -21,8 +21,10 @@ class ProductCard {
     this.nameProduct.innerHTML = this.name;
     this.priceProduct.innerHTML = this.price;
     this.button.innerHTML = 'Подробнее';
-    this.button.setAttribute('id', this.id);
+    this.button.setAttribute('data-id', this.id);
     this.button.setAttribute('data-type', this.type);
+    this.wrapperImg.setAttribute('data-id', this.id);
+    this.wrapperImg.setAttribute('data-type', this.type);
   }
   appendWrappers() {
     this.imgProduct.onload = () => this.wrapperImg.append(this.imgProduct);
