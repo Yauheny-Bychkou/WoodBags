@@ -20,7 +20,9 @@ class Card {
     this.overlayDark.classList.add('galery-overlay-dark');
     this.overlayForClick.classList.add('galery-overlay-forClick');
     this.overlayForClick.setAttribute('id', name);
-    this.wrapperImg.prepend(this.img);
+    this.img.onload = () => {
+      this.wrapperImg.prepend(this.img);
+    };
     this.wrapperImg.append(this.wrapperAbsolute, this.overlayDark, this.overlayForClick);
     this.element.append(this.wrapperImg);
   }
