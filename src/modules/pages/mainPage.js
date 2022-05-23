@@ -305,7 +305,7 @@ class MainPage {
     });
   }
   appendElements() {
-    this.wrapper.append(
+    document.body.append(
       this.header.element,
       this.greeting.element,
       this.about.element,
@@ -317,10 +317,7 @@ class MainPage {
       this.comment.element,
       this.delivery.element,
       this.contacts.element,
-      this.footer.element
-    );
-    document.body.append(
-      this.wrapper,
+      this.footer.element,
       this.menu.element,
       this.modal.element,
       this.product.element,
