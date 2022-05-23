@@ -329,8 +329,8 @@ class MainPage {
     window.onload = () => {
       this.header.element.classList.remove('none');
       this.greeting.element.classList.remove('none');
-      this.about.element.classList.remove('none');
       setTimeout(() => {
+        this.about.element.classList.remove('none');
         this.galery.element.classList.remove('none');
         this.why.element.classList.remove('none');
         this.collage.element.classList.remove('none');
