@@ -64,12 +64,12 @@ class Collage {
     this.collageRightBottomImg.setAttribute('loading', 'lazy');
   }
   appendWrapper() {
-    this.collageLeftTopImg.onload = () => this.collageLeftTop.append(this.collageLeftTopImg);
-    this.collageLeftMiddleImg.onload = () => this.collageLeftMiddle.append(this.collageLeftMiddleImg);
-    this.collageLeftBottomImg.onload = () => this.collageLeftBottom.append(this.collageLeftBottomImg);
-    this.collageRightTopImg.onload = () => this.collageRightTop.append(this.collageRightTopImg);
-    this.collageRightMiddleImg.onload = () => this.collageRightMiddle.append(this.collageRightMiddleImg);
-    this.collageRightBottomImg.onload = () => this.collageRightBottom.append(this.collageRightBottomImg);
+    this.collageLeftTop.append(this.collageLeftTopImg);
+    this.collageLeftMiddle.append(this.collageLeftMiddleImg);
+    this.collageLeftBottom.append(this.collageLeftBottomImg);
+    this.collageRightTop.append(this.collageRightTopImg);
+    this.collageRightMiddle.append(this.collageRightMiddleImg);
+    this.collageRightBottom.append(this.collageRightBottomImg);
     this.collageRight.append(this.collageRightTop, this.collageRightMiddle, this.collageRightBottom);
     this.collageLeft.append(this.collageLeftTop, this.collageLeftMiddle, this.collageLeftBottom);
     this.collageWrapper.append(this.collageLeft, this.collageRight);
