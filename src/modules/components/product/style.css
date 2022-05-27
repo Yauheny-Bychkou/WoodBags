@@ -36,6 +36,7 @@
 }
 .product-content {
   display: flex;
+  overflow-y: auto;
 }
 .container-slider-product {
   max-width: 600px;

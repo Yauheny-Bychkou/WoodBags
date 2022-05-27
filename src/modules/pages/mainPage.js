@@ -40,6 +40,7 @@ class MainPage {
   modalForm = new ModalForm();
 
   constructor() {
+    console.log(Number.isFinite('0'));
     this.appendElements();
     this.showElementsAfterOnLoad();
     this.initSlider();
