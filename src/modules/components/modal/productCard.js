@@ -27,7 +27,7 @@ class ProductCard {
     this.wrapperImg.setAttribute('data-type', this.type);
   }
   appendWrappers() {
-    this.imgProduct.onload = () => this.wrapperImg.append(this.imgProduct);
+    this.wrapperImg.append(this.imgProduct);
     this.element.append(this.wrapperImg, this.nameProduct, this.priceProduct, this.button);
   }
   addClassName() {
