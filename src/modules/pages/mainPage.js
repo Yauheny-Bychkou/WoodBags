@@ -198,18 +198,16 @@ class MainPage {
           .then(() => this.product.showProduct(e.target.dataset.type, e.target.dataset.id))
           .then(() => this.initSliderProduct())
           .then(() =>
-            setTimeout(() => {
-              this.product.element.classList.remove('none');
-            }, 50)
-          )
-          .then(() => this.product.element.classList.add('product-active'));
+            setInterval(() => {
+              this.product.element.classList.add('product-active');
+            }, 300)
+          );
       }
     });
   }
   addEventListenerToCloseProduct() {
     this.product.buttonClose.addEventListener('click', () => {
       this.product.element.classList.remove('product-active');
-      this.product.element.classList.add('none');
     });
   }
   addActiveClassToHeaderLink() {

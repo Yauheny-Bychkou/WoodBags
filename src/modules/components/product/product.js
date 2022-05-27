@@ -35,7 +35,7 @@ class Product {
     this.imgClose.setAttribute('src', 'close.svg');
     this.imgCloseSmall.classList.add('product-close-img-small');
     this.imgClose.classList.add('product-close-img');
-    this.element.classList.add('product', 'none');
+    this.element.classList.add('product');
     this.container.classList.add('container-product');
     this.content.classList.add('product-content');
     this.wrapperSliders.classList.add('product-sliders');
