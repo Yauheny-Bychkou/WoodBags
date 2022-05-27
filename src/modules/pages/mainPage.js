@@ -198,9 +198,9 @@ class MainPage {
           .then(() => this.product.showProduct(e.target.dataset.type, e.target.dataset.id))
           .then(() => this.initSliderProduct())
           .then(() =>
-            setInterval(() => {
+            setTimeout(() => {
               this.product.element.classList.add('product-active');
-            }, 600)
+            }, 500)
           );
       }
     });
