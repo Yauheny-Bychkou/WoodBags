@@ -299,7 +299,7 @@ class MainPage {
               setTimeout(() => {
                 this.modal.element.classList.add('modal-active');
                 this.modal.content.classList.add('modal-content-active');
-              }, 300);
+              }, 50);
             };
           });
       }
