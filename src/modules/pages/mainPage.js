@@ -40,7 +40,6 @@ class MainPage {
   modalForm = new ModalForm();
 
   constructor() {
-    console.log(Number.isFinite('0'));
     this.appendElements();
     this.showElementsAfterOnLoad();
     this.initSlider();
@@ -283,17 +282,26 @@ class MainPage {
   addEventListenerToGaleryWrapper() {
     this.galery.element.addEventListener('click', (e) => {
       if (e.target.classList.contains('galery-overlay-forClick')) {
-        this.modal.element.classList.add('modal-active');
-        this.modal.content.classList.add('modal-content-active');
-        this.wrapper.classList.add('wrapper-hidden');
-        document.body.classList.add('overflow-hidden');
-        this.modal.addWrapperProducts(e.target.id);
-        this.header.element.classList.add('header-overflow');
-        document.querySelectorAll('.modal-item-line').forEach((elem) => {
-          if (elem === document.querySelector(`a[href='#${e.target.id}']`).parentNode.children[1]) {
-            elem.classList.add('modal-item-line--active');
-          } else elem.classList.remove('modal-item-line--active');
-        });
+        Promise.resolve()
+          .then(() => {
+            this.wrapper.classList.add('wrapper-hidden');
+            document.body.classList.add('overflow-hidden');
+            this.modal.addWrapperProducts(e.target.id);
+            this.header.element.classList.add('header-overflow');
+            document.querySelectorAll('.modal-item-line').forEach((elem) => {
+              if (elem === document.querySelector(`a[href='#${e.target.id}']`).parentNode.children[1]) {
+                elem.classList.add('modal-item-line--active');
+              } else elem.classList.remove('modal-item-line--active');
+            });
+          })
+          .then(() => {
+            this.modal.wrapperCards.children[0].children[0].children[0].onload = () => {
+              setTimeout(() => {
+                this.modal.element.classList.add('modal-active');
+                this.modal.content.classList.add('modal-content-active');
+              }, 300);
+            };
+          });
       }
     });
   }
