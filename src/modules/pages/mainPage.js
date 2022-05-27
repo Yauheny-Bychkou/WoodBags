@@ -200,7 +200,7 @@ class MainPage {
           .then(() =>
             setInterval(() => {
               this.product.element.classList.add('product-active');
-            }, 300)
+            }, 600)
           );
       }
     });
