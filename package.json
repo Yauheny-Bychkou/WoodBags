@@ -1,5 +1,5 @@
 {
-    "name": "Test-task",
+    "name": "Woodbags",
     "version": "1.0.0",
     "description": "",
     "main": "webpack.base.config.js",
@@ -35,5 +35,6 @@
         "webpack-merge": "^5.7.3"
     },
     "dependencies": {
+        "swiper": "^8.1.0"
     }
 }

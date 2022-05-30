@@ -28,6 +28,9 @@ const baseConfig = {
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'public' }],
+    }),
   ],
 };
 

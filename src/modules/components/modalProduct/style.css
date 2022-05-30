@@ -1,0 +1,152 @@
+.modal-product-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  z-index: 105;
+}
+.modal-product-overlay--visible {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+  overflow-y: auto;
+}
+.modal-product-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 33px 88px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 8px;
+}
+.modal-product-dialog--visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow-y: auto;
+  max-height: 95vh;
+  z-index: 106;
+}
+.modal-product-wrapper-content {
+  display: flex;
+}
+.modal-title-line {
+  width: 300px;
+  border-top: 3px solid #bd9a87;
+}
+.modal-product-title {
+  font-size: 35px;
+  line-height: 47px;
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 400;
+  margin: 0 0 25px 0;
+}
+.modal-wrrapper-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-product-wrapper-content {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  padding-left: 25px;
+}
+.modal-wrapper-buttonClose {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 1150px) {
+  .modal-product-dialog {
+    padding: 33px 40px;
+  }
+  /* .modal-product-wrapper-content {
+    width: 750px;
+  } */
+}
+@media (max-width: 1050px) {
+  .modal-product-wrapper-content {
+    width: 800px;
+    padding: 0;
+  }
+}
+@media (max-width: 900px) {
+  .modal-product-wrapper-content {
+    width: 760px;
+  }
+}
+@media (max-width: 850px) {
+  .modal-product-dialog {
+    padding: 35px 15px 15px 15px;
+  }
+  .modal-product-wrapper-content {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 770px) {
+  .modal-title-line {
+    width: 150px;
+  }
+  .modal-prod-button {
+    font-size: 12px;
+    padding: 12px 33px 12px 33px;
+  }
+  .modal-prod-inputName {
+    font-size: 12px;
+    padding: 10px 100px 10px 10px;
+  }
+  .modal-prod-area {
+    font-size: 12px;
+    padding: 10px;
+    height: 140px;
+  }
+  .modal-product-title {
+    margin: 0;
+  }
+
+  .modal-product-wrapper-content {
+    width: 600px;
+  }
+}
+@media (max-width: 650px) {
+  .modal-product-title {
+    font-size: 23px;
+    line-height: 30px;
+  }
+  .modal-product-wrapper-content {
+    width: 500px;
+  }
+}
+@media (max-width: 550px) {
+  .modal-product-wrapper-content {
+    width: 450px;
+  }
+}
+@media (max-width: 500px) {
+  .modal-product-wrapper-content {
+    width: 360px;
+  }
+}
+@media (max-width: 420px) {
+  .modal-product-wrapper-content {
+    width: 100%;
+  }
+}
