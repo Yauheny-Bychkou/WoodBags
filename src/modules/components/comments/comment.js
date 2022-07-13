@@ -15,8 +15,8 @@ class Comment {
     this.element.setAttribute('id', 'reviews');
     this.title = new Title('Отзывы');
     this.title.title.classList.add('title-comment');
-    this.arrowPrev.setAttribute('src', 'arrow-left.svg');
-    this.arrowNext.setAttribute('src', 'arrow-right.svg');
+    this.arrowPrev.setAttribute('src', './main/slider/arrow-left.svg');
+    this.arrowNext.setAttribute('src', './main/slider/arrow-right.svg');
     this.swiperButtonPrev.append(this.arrowPrev);
     this.swiperButtonNext.append(this.arrowNext);
     this.swiperButtonPrev.classList.add('slider-button-prev', 'slider-button', 'slider-button-comment');

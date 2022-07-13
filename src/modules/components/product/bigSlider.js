@@ -19,10 +19,10 @@ class BigSlider {
     this.changeSlides(arrayImages);
   }
   appendContent() {
-    this.arrowPrev.setAttribute('src', 'arrow-left.svg');
-    this.arrowNext.setAttribute('src', 'arrow-right.svg');
-    this.arrowPrevSmall.setAttribute('src', 'arrow-left-small.svg');
-    this.arrowNextSmall.setAttribute('src', 'arrow-right-small.svg');
+    this.arrowPrev.setAttribute('src', './main/slider/arrow-left.svg');
+    this.arrowNext.setAttribute('src', './main/slider/arrow-right.svg');
+    this.arrowPrevSmall.setAttribute('src', './main/slider/arrow-left-small.svg');
+    this.arrowNextSmall.setAttribute('src', './main/slider/arrow-right-small.svg');
     this.swiperButtonPrev.append(this.arrowPrev, this.arrowPrevSmall);
     this.swiperButtonNext.append(this.arrowNext, this.arrowNextSmall);
     this.sliderSmallImages.append(this.swiperWrapperSmallImages);
