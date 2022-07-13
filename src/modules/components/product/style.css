@@ -15,6 +15,7 @@
 .product-active {
   opacity: 1;
   pointer-events: all;
+  overflow-y: auto;
 }
 .slider-product-button-next {
   width: 20px;
@@ -36,7 +37,6 @@
 }
 .product-content {
   display: flex;
-  overflow-y: auto;
   height: 100vh;
 }
 .container-slider-product {

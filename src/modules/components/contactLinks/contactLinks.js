@@ -25,14 +25,14 @@ class ContactLinks {
     this.mailLink.innerHTML = 'woodbag.s@gmail.com';
     this.linkInst.setAttribute('href', 'https://www.instagram.com/woodbag.s');
     this.linkInst.setAttribute('target', 'blank');
-    this.iconInst.setAttribute('src', 'inst.svg');
+    this.iconInst.setAttribute('src', './main/contacts/inst.svg');
     this.linkVk.setAttribute('href', 'https://www.instagram.com/woodbag.s');
     this.linkVk.setAttribute('target', 'blank');
-    this.iconVk.setAttribute('src', 'vk.svg');
+    this.iconVk.setAttribute('src', './main/contacts/vk.svg');
     this.linkTeleg.setAttribute('href', 'https://www.instagram.com/woodbag.s');
     this.linkTeleg.classList.add('contacts-social-link');
     this.linkTeleg.setAttribute('target', 'blank');
-    this.iconTeleg.setAttribute('src', 'teleg.svg');
+    this.iconTeleg.setAttribute('src', './main/contacts/teleg.svg');
   }
   addClassName() {
     this.wrapper.classList.add(`${this.type}-wrapper-left`);
